@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://brightlinx.netlify.app/sitemap.xml
+Sitemap: https://brightlinx.in/sitemap.xml
