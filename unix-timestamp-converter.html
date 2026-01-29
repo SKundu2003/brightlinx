@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VBKLLM90TV"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-VBKLLM90TV');
+    </script>
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "v3gr0bbf1t");
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-KQ7BPNTG');</script>
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://clarity.ms">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <!-- SEO Meta Tags -->
+    <title>Unix Timestamp Converter - Epoch Time to Date | Brightlinx</title>
+    <meta name="description"
+        content="Convert Unix Timestamp to Human Date and Date to Timestamp instantly. View live Unix Epoch time. Essential developer tool for debugging and logging.">
+    <meta name="keywords"
+        content="unix timestamp converter, epoch converter, timestamp to date, human readable time, unix epoch, developer tool, brightlinx, current timestamp">
+    <link rel="canonical" href="https://brightlinx.in/unix-timestamp-converter.html">
+
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Unix Timestamp Converter - Epoch Time to Date | Brightlinx">
+    <meta property="og:description"
+        content="Instant Unix Timestamp conversion. Live clock, Epoch to Date, and Date to Epoch tools.">
+    <meta property="og:url" content="https://brightlinx.in/unix-timestamp-converter.html">
+    <meta property="og:type" content="website">
+
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+    [
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Unix Timestamp Converter",
+        "operatingSystem": "Any",
+        "applicationCategory": "DeveloperTool",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.8",
+          "ratingCount": "1024"
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is a Unix Timestamp?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The Unix Timestamp acts as a running total of seconds that have elapsed since the Unix Epoch: January 1, 1970 at 00:00:00 UTC."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "When will the Unix Timestamp overflow?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "On 32-bit systems, the signed integer used for Unix time will overflow on January 19, 2038, known as the 'Year 2038 problem'."
+            }
+          }
+        ]
+      }
+    ]
+    </script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .converter-container {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .section-box {
+            background-color: #f8fafc;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .section-header {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--text-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-header svg {
+            width: 20px;
+            height: 20px;
+            color: var(--primary-color);
+        }
+
+        /* Live Section */
+        .live-clock {
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        .timestamp-display {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            font-family: monospace;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        @media (max-width: 600px) {
+            .timestamp-display {
+                font-size: 1.8rem;
+            }
+        }
+
+        .btn-copy {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: opacity 0.2s;
+        }
+
+        .btn-copy:hover {
+            opacity: 0.9;
+        }
+
+        /* Input Groups */
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .row-group {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        input[type="number"],
+        input[type="text"],
+        input[type="datetime-local"] {
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 1rem;
+            flex-grow: 1;
+            font-family: inherit;
+        }
+
+        .output-box {
+            margin-top: 10px;
+            padding: 12px;
+            background: white;
+            border: 1px dashed var(--border-color);
+            border-radius: 6px;
+            font-family: monospace;
+            color: #334155;
+            min-height: 48px;
+            display: flex;
+            align-items: center;
+        }
+
+        .code-block {
+            background: #1e293b;
+            color: #e2e8f0;
+            padding: 15px;
+            border-radius: 6px;
+            font-family: monospace;
+            overflow-x: auto;
+            margin: 10px 0;
+            font-size: 0.9rem;
+        }
+
+        .code-title {
+            color: #94a3b8;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        #toast {
+            visibility: hidden;
+            min-width: 250px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            border-radius: 4px;
+            padding: 16px;
+            position: fixed;
+            z-index: 1;
+            left: 50%;
+            bottom: 30px;
+            transform: translateX(-50%);
+            font-size: 17px;
+        }
+
+        #toast.show {
+            visibility: visible;
+            animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        }
+
+        @keyframes fadein {
+            from {
+                bottom: 0;
+                opacity: 0;
+            }
+
+            to {
+                bottom: 30px;
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeout {
+            from {
+                bottom: 30px;
+                opacity: 1;
+            }
+
+            to {
+                bottom: 0;
+                opacity: 0;
+            }
+        }
+    </style>
+    </head>
+
+<body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KQ7BPNTG" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">Brightlinx</a>
+        </div>
+    </header>
+
+    <main class="container tool-page">
+
+        <div class="tool-header">
+            <h1>Unix Timestamp Converter</h1>
+            <p>Developer Utility: Epoch Time to Date & Vice Versa</p>
+        </div>
+
+        <div class="ad-container-top" style="text-align:center; min-height:100px; margin: 10px auto;">
+            <div data-banner-id="2015345"></div>
+        </div>
+
+        <div class="tool-wrapper">
+            <div class="converter-container" style="max-width: 700px; margin: 0 auto;">
+
+                <!-- Section A: Live Clock -->
+                <div class="section-box">
+                    <div class="section-header">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        Current Unix Timestamp
+                    </div>
+                    <div class="live-clock">
+                        <span id="currentTimestamp" class="timestamp-display">...</span>
+                        <button class="btn-copy" onclick="copyCurrent()">Copy Current Timestamp</button>
+                    </div>
+                </div>
+
+                <!-- Section B: Timestamp to Date -->
+                <div class="section-box">
+                    <div class="section-header">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                        Timestamp to Date
+                    </div>
+                    <div class="input-group">
+                        <div class="row-group">
+                            <input type="number" id="inputTimestamp" placeholder="e.g. 1706500000">
+                            <button class="btn-copy" onclick="convertTimestamp()">Convert</button>
+                        </div>
+                        <div id="outputDate" class="output-box">
+                            Result will appear here...
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section C: Date to Timestamp -->
+                <div class="section-box">
+                    <div class="section-header">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
+                        </svg>
+                        Date to Timestamp
+                    </div>
+                    <div class="input-group">
+                        <div class="row-group">
+                            <input type="datetime-local" id="inputDate">
+                            <button class="btn-copy" onclick="convertDate()">Convert</button>
+                        </div>
+                        <div id="outputTimestampResult" class="output-box">
+                            Timestamp will appear here...
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <article>
+            <h2>How does the Unix Timestamp Converter work?</h2>
+            <p>The <strong>Unix Timestamp</strong> (also known as Epoch Time or POSIX time) is a system for describing a
+                point in time. It is defined as the number of seconds that have elapsed since the <strong>Unix
+                    Epoch</strong>, which is 00:00:00 UTC on Thursday, 1 January 1970.</p>
+            <p>It maintains a running total of seconds, disregarding leap seconds. It is widely used in computing and
+                operating systems because it represents time as a single number, making it easy to store and calculate
+                differences.</p>
+
+            <h2>The Year 2038 Problem</h2>
+            <p>On 32-bit systems, the Unix timestamp is stored as a signed 32-bit integer. The maximum value this
+                integer can hold is <strong>2,147,483,647</strong>.</p>
+            <p>This maximum value corresponds to <strong>January 19, 2038, at 03:14:07 UTC</strong>. One second later,
+                the integer will overflow, wrapping around to a large negative number, which systems will interpret as
+                December 13, 1901. This is known as the Year 2038 problem. Most modern systems are migrating to 64-bit
+                integers to solve this.</p>
+
+            <h2>Common Unix Commands</h2>
+            <p>Here is how you can get the current Unix timestamp in various programming languages:</p>
+
+            <code class="code-title">Python</code>
+            <div class="code-block">import time<br>print(int(time.time()))</div>
+
+            <code class="code-title">JavaScript</code>
+            <div class="code-block">Math.floor(Date.now() / 1000);</div>
+
+            <code class="code-title">PHP</code>
+            <div class="code-block">echo time();</div>
+
+            <code class="code-title">Java</code>
+            <div class="code-block">System.currentTimeMillis() / 1000;</div>
+        </article>
+
+        <div class="ad-container-middle" style="text-align:center; margin: 20px 0; min-height:250px;">
+            <div data-banner-id="2015585"></div>
+        </div>
+
+        <div id="toast">Copied to clipboard!</div>
+
+        <!-- More Tools Section -->
+        <section class="more-tools"
+            style="padding: 40px 0; border-top: 1px solid var(--border-color); margin-top:40px;">
+            <h3 style="text-align: center; margin-bottom: 30px;">More Free Tools</h3>
+            <div class="tools-grid">
+                <a href="slug-generator.html" class="card">
+                    <div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                        </svg></div>
+                    <h3>Slug Generator</h3>
+                </a>
+                <a href="hex-to-rgb.html" class="card">
+                    <div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+                        </svg></div>
+                    <h3>HEX to RGB</h3>
+                </a>
+                <a href="text-to-binary.html" class="card">
+                    <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="8" rx="2" ry="2" />
+                            <rect x="2" y="14" width="20" height="8" rx="2" ry="2" />
+                            <line x1="6" y1="6" x2="6.01" y2="6" />
+                            <line x1="6" y1="18" x2="6.01" y2="18" />
+                        </svg></div>
+                    <h3>Text to Binary</h3>
+                </a>
+            </div>
+            <div style="text-align:center; margin-top:20px;">
+                <a href="index.html" style="color:var(--primary-color); font-weight:600;">View All Tools &rarr;</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="ad-container-bottom" style="text-align:center; min-height:100px; margin-top: 30px;">
+            <div data-banner-id="2015586"></div>
+        </div>
+        <div class="container">
+            <div>&copy; 2026 Brightlinx. Free, Privacy-Focused, Open Web Utilities.</div>
+            <p>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Live Clock
+        function updateClock() {
+            const now = Math.floor(Date.now() / 1000);
+            document.getElementById('currentTimestamp').innerText = now;
+        }
+        setInterval(updateClock, 1000);
+        updateClock(); // Init immediately
+
+        function copyCurrent() {
+            const ts = document.getElementById('currentTimestamp').innerText;
+            navigator.clipboard.writeText(ts).then(showToast);
+        }
+
+        function convertTimestamp() {
+            const tsInput = document.getElementById('inputTimestamp').value;
+            const output = document.getElementById('outputDate');
+
+            if (!tsInput) {
+                output.innerText = "Please enter a timestamp.";
+                return;
+            }
+
+            // Detect if milliseconds (13 digits) or seconds (10 digits)
+            // Convention: If length > 11, assume millis. If not, multiply by 1000
+            // Or just check reasonable range. 
+            // User requested Seconds in Live section, but might paste millis.
+            // Let's standardise: if small, * 1000.
+
+            let ts = parseInt(tsInput);
+
+            // Simple heuristic: year 3000 is ~32503680000 (11 digits).
+            // Current millis is ~1700000000000 (13 digits).
+            // Current seconds is ~1700000000 (10 digits).
+
+            if (ts < 10000000000) {
+                // It's likely seconds
+                ts *= 1000;
+            }
+
+            const date = new Date(ts);
+
+            if (isNaN(date.getTime())) {
+                output.innerText = "Invalid Timestamp";
+                return;
+            }
+
+            // Format: Mon Jan 29 2024 22:52:48 GMT+...
+            output.innerText = date.toString();
+        }
+
+        function convertDate() {
+            const dateInput = document.getElementById('inputDate').value; // yyyy-MM-ddThh:mm
+            const output = document.getElementById('outputTimestampResult');
+
+            if (!dateInput) {
+                output.innerText = "Please select a date.";
+                return;
+            }
+
+            const date = new Date(dateInput);
+            const ts = Math.floor(date.getTime() / 1000);
+
+            if (isNaN(ts)) {
+                output.innerText = "Invalid Date";
+                return;
+            }
+
+            output.innerText = ts;
+        }
+
+        function showToast() {
+            const toast = document.getElementById("toast");
+            toast.className = "show";
+            setTimeout(function () { toast.className = toast.className.replace("show", ""); }, 3000);
+        }
+    </script>
+
+    <!-- Infolinks Script -->
+    <script type="text/javascript">
+        var infolinks_pid = 3442850;
+        var infolinks_wsid = 0;
+    </script>
+    <script type="text/javascript" src="https://resources.infolinks.com/js/infolinks_main.js"></script>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-banner">
+        <p>We use cookies to improve your experience and show personalized ads. By using this site, you agree to our <a
+                href="privacy.html">Privacy Policy</a>.</p>
+        <div>
+            <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Accept</button>
+            <button class="cookie-btn cookie-decline" onclick="declineCookies()">Decline</button>
+        </div>
+    </div>
+    <script>
+        (function () {
+            const banner = document.getElementById('cookie-banner');
+            const consent = localStorage.getItem('cookieConsent');
+            if (!consent) {
+                banner.style.display = 'flex';
+            }
+            window.acceptCookies = function () {
+                localStorage.setItem('cookieConsent', 'accepted');
+                banner.style.display = 'none';
+            };
+            window.declineCookies = function () {
+                banner.style.display = 'none';
+            };
+        })();
+    </script>
+    <!-- Ad Script -->
+    <script async src="https://js.mbidadm.com/static/scripts.js" data-admpid="418415"></script>
+</body>
+
+</html>

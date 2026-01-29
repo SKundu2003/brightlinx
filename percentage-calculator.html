@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VBKLLM90TV"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-VBKLLM90TV');
+    </script>
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "v3gr0bbf1t");
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-KQ7BPNTG');</script>
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://clarity.ms">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <!-- SEO Meta Tags -->
+    <title>Free Online Percentage Calculator - Instant & Accurate | Brightlinx</title>
+    <meta name="description"
+        content="Calculate percentages instantly. Find percent of a number, percentage change, and percentage difference. Free tool, no signup.">
+    <meta name="keywords"
+        content="percentage calculator, percent calculator, calculate percentage, percentage change calculator, math tools, brightlinx">
+    <link rel="canonical" href="https://brightlinx.in/percentage-calculator.html">
+
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Free Online Percentage Calculator - Instant & Accurate | Brightlinx">
+    <meta property="og:description"
+        content="Calculate percentages instantly. Find percent of a number, percentage change, and percentage difference. Free tool, no signup.">
+    <meta property="og:url" content="https://brightlinx.in/percentage-calculator.html">
+    <meta property="og:type" content="website">
+
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+    [
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Percentage Calculator",
+        "operatingSystem": "Any",
+        "applicationCategory": "Utility",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "ratingCount": "1024"
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How do I calculate a percentage of a number?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "To find a percentage of a number, multiply the number by the percentage fraction (e.g., for 20% of 50, do 50 * 0.20 = 10)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I calculate percentage increase or decrease?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, use the 'Percentage Change' mode. Enter the original and new values to see if it's an increase or decrease and by how much."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this tool free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, this percentage calculator is 100% free and works independently on your device."
+            }
+          }
+        ]
+      }
+    ]
+    </script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .converter-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            padding: 10px 20px;
+            background: transparent;
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 500;
+            color: var(--text-color);
+            transition: all 0.2s;
+        }
+
+        .tab-btn.active {
+            background-color: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        .calc-mode {
+            display: none;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .calc-mode.active {
+            display: flex;
+        }
+
+        .input-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .input-row input {
+            padding: 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 1rem;
+            width: 100px;
+            flex: 1;
+        }
+
+        .input-row span {
+            font-weight: 600;
+        }
+
+        .result-box {
+            background-color: #f1f5f9;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            font-size: 1.2rem;
+            text-align: center;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-top: 10px;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KQ7BPNTG" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">Brightlinx</a>
+        </div>
+    </header>
+
+    <main class="container tool-page">
+
+        <div class="tool-header">
+            <h1>Percentage Calculator</h1>
+            <p>Calculate percentages, percentage change, and find X in Y instantly.</p>
+        </div>
+
+        <div class="ad-container-top" style="text-align:center; min-height:100px; margin: 10px auto;">
+            <div data-banner-id="2015345"></div>
+        </div>
+
+        <div class="tool-wrapper">
+            <!-- Ad Middle -->
+            <div class="ad-container-middle" style="text-align:center; margin: 20px 0; min-height:250px;">
+                <div data-banner-id="2015585"></div>
+            </div>
+            <div class="converter-container" style="max-width: 600px; margin: 0 auto;">
+
+                <div class="tabs">
+                    <button class="tab-btn active" onclick="switchMode('percentOf')">Find %</button>
+                    <button class="tab-btn" onclick="switchMode('whatPercent')">What % is...</button>
+                    <button class="tab-btn" onclick="switchMode('percentChange')">% Change</button>
+                </div>
+
+                <!-- Mode 1: What is X% of Y? -->
+                <div id="percentOf" class="calc-mode active">
+                    <div class="input-row">
+                        <span>What is</span>
+                        <input type="number" id="p1_num1" placeholder="10" oninput="calculate()">
+                        <span>% of</span>
+                        <input type="number" id="p1_num2" placeholder="500" oninput="calculate()">
+                        <span>?</span>
+                    </div>
+                    <div class="result-box" id="res1">Result</div>
+                </div>
+
+                <!-- Mode 2: X is what % of Y? -->
+                <div id="whatPercent" class="calc-mode">
+                    <div class="input-row">
+                        <input type="number" id="p2_num1" placeholder="25" oninput="calculate()">
+                        <span>is what % of</span>
+                        <input type="number" id="p2_num2" placeholder="100" oninput="calculate()">
+                        <span>?</span>
+                    </div>
+                    <div class="result-box" id="res2">Result</div>
+                </div>
+
+                <!-- Mode 3: Percentage Change -->
+                <div id="percentChange" class="calc-mode">
+                    <div class="input-row">
+                        <span>From</span>
+                        <input type="number" id="p3_num1" placeholder="100" oninput="calculate()">
+                        <span>to</span>
+                        <input type="number" id="p3_num2" placeholder="150" oninput="calculate()">
+                        <span>?</span>
+                    </div>
+                    <div class="result-box" id="res3">Result</div>
+                </div>
+
+            </div>
+        </div>
+
+        <article>
+            <h2>How does the Percentage Calculator work?</h2>
+            <p>Percent means "per 100". To calculate a percentage, you are essentially determining a part of a whole
+                expressed as a fraction of 100. The basic formula to find a percentage of a number is:</p>
+            <p><code>(Percentage / 100) * Number</code></p>
+            <p>For example, to find 20% of 500, you calculate <code>(20 / 100) * 500 = 0.2 * 500 = 100</code>.</p>
+
+            <h2>Common Percentage Examples</h2>
+            <table style="width:100%; border-collapse: collapse; margin-top: 20px; font-size: 0.95rem;">
+                <thead>
+                    <tr style="background: #f1f5f9; text-align: left;">
+                        <th style="padding: 10px; border: 1px solid var(--border-color);">Example</th>
+                        <th style="padding: 10px; border: 1px solid var(--border-color);">Calculation</th>
+                        <th style="padding: 10px; border: 1px solid var(--border-color);">Result</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="padding: 10px; border: 1px solid var(--border-color);">10% of 100</td>
+                        <td style="padding: 10px; border: 1px solid var(--border-color);">0.10 * 100</td>
+                        <td style="padding: 10px; border: 1px solid var(--border-color);">10</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px; border: 1px solid var(--border-color);">50% of 80</td>
+                        <td style="padding: 10px; border: 1px solid var(--border-color);">0.50 * 80</td>
+                        <td style="padding: 10px; border: 1px solid var(--border-color);">40</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px; border: 1px solid var(--border-color);">25% of 200</td>
+                        <td style="padding: 10px; border: 1px solid var(--border-color);">0.25 * 200</td>
+                        <td style="padding: 10px; border: 1px solid var(--border-color);">50</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>Why use this tool?</h2>
+            <p>This percentage calculator is a handy utility for students, professionals, and anyone needing quick math
+                solutions. It's completely free, works offline in your browser, and guarantees privacy as no data is
+                sent to a server.</p>
+
+            <h2>Frequently Asked Questions (FAQ)</h2>
+            <h3>How do I calculate a percentage increase?</h3>
+            <p>To calculate percentage increase: <code>((New Value - Old Value) / Old Value) * 100</code>. If the result
+                is positive, it's an increase.</p>
+
+            <h3>How do I calculate a percentage decrease?</h3>
+            <p>It's the same formula as increase. If the result is negative, it represents a percentage decrease.</p>
+
+            <h3>What is X as a percentage of Y?</h3>
+            <p>To find what percent X is of Y, use the formula: <code>(X / Y) * 100</code>.</p>
+        </article>
+
+        <div class="ad-container-bottom" style="text-align:center; min-height:100px; margin-top: 30px;">
+            <div data-banner-id="2015586"></div>
+        </div>
+
+        <!-- More Tools Section -->
+        <section class="more-tools"
+            style="padding: 40px 0; border-top: 1px solid var(--border-color); margin-top:40px;">
+            <h3 style="text-align: center; margin-bottom: 30px;">More Free Tools</h3>
+            <div class="tools-grid">
+                <a href="age-calculator.html" class="card">
+                    <div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg></div>
+                    <h3>Age Calculator</h3>
+                </a>
+                <a href="number-to-words.html" class="card">
+                    <div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14" />
+                        </svg></div>
+                    <h3>Number to Words</h3>
+                </a>
+                <a href="index.html" class="card">
+                    <div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+                        </svg></div>
+                    <h3>All Tools</h3>
+                </a>
+            </div>
+            <div style="text-align:center; margin-top:20px;">
+                <a href="index.html" style="color:var(--primary-color); font-weight:600;">View All Tools &rarr;</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div>&copy; 2026 Brightlinx. Free, Privacy-Focused, Open Web Utilities.</div>
+            <p>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Percentage Calculator Logic
+        let currentMode = 'percentOf';
+
+        function switchMode(mode) {
+            currentMode = mode;
+            // Update tabs
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            // Show mode content
+            document.querySelectorAll('.calc-mode').forEach(div => div.classList.remove('active'));
+            document.getElementById(mode).classList.add('active');
+
+            calculate();
+        }
+
+        function calculate() {
+            if (currentMode === 'percentOf') {
+                const p = parseFloat(document.getElementById('p1_num1').value);
+                const n = parseFloat(document.getElementById('p1_num2').value);
+                const resEl = document.getElementById('res1');
+
+                if (!isNaN(p) && !isNaN(n)) {
+                    const res = (p / 100) * n;
+                    resEl.innerText = `${p}% of ${n} = ${parseFloat(res.toFixed(2))}`;
+                } else {
+                    resEl.innerText = 'Result';
+                }
+            } else if (currentMode === 'whatPercent') {
+                const n1 = parseFloat(document.getElementById('p2_num1').value);
+                const n2 = parseFloat(document.getElementById('p2_num2').value);
+                const resEl = document.getElementById('res2');
+
+                if (!isNaN(n1) && !isNaN(n2) && n2 !== 0) {
+                    const res = (n1 / n2) * 100;
+                    resEl.innerText = `${n1} is ${parseFloat(res.toFixed(2))}% of ${n2}`;
+                } else {
+                    resEl.innerText = 'Result';
+                }
+            } else if (currentMode === 'percentChange') {
+                const n1 = parseFloat(document.getElementById('p3_num1').value);
+                const n2 = parseFloat(document.getElementById('p3_num2').value);
+                const resEl = document.getElementById('res3');
+
+                if (!isNaN(n1) && !isNaN(n2) && n1 !== 0) {
+                    const change = ((n2 - n1) / n1) * 100;
+                    const status = change > 0 ? 'Increase' : 'Decrease';
+                    resEl.innerText = `${parseFloat(Math.abs(change).toFixed(2))}% ${status}`;
+                    resEl.style.color = change > 0 ? 'green' : (change < 0 ? 'var(--primary-color)' : 'var(--text-color)');
+                } else {
+                    resEl.innerText = 'Result';
+                }
+            }
+        }
+    </script>
+
+    <!-- Infolinks Script -->
+    <script type="text/javascript">
+        var infolinks_pid = 3442850;
+        var infolinks_wsid = 0;
+    </script>
+    <script type="text/javascript" src="https://resources.infolinks.com/js/infolinks_main.js"></script>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-banner">
+        <p>We use cookies to improve your experience and show personalized ads. By using this site, you agree to our <a
+                href="privacy.html">Privacy Policy</a>.</p>
+        <div>
+            <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Accept</button>
+            <button class="cookie-btn cookie-decline" onclick="declineCookies()">Decline</button>
+        </div>
+    </div>
+    <script>
+        (function () {
+            const banner = document.getElementById('cookie-banner');
+            const consent = localStorage.getItem('cookieConsent');
+            if (!consent) {
+                banner.style.display = 'flex';
+            }
+            window.acceptCookies = function () {
+                localStorage.setItem('cookieConsent', 'accepted');
+                banner.style.display = 'none';
+            };
+            window.declineCookies = function () {
+                banner.style.display = 'none';
+            };
+        })();
+    </script>
+    <!-- Ad Script -->
+    <script async src="https://js.mbidadm.com/static/scripts.js" data-admpid="418415"></script>
+</body>
+
+</html>

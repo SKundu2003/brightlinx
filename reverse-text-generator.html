@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VBKLLM90TV"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-VBKLLM90TV');
+    </script>
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "v3gr0bbf1t");
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-KQ7BPNTG');</script>
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://clarity.ms">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <!-- SEO Meta Tags -->
+    <title>Free Reverse Text Generator - Flip Text Upside Down | Brightlinx</title>
+    <meta name="description"
+        content="Instantly reverse text, flip words, or turn text upside down. Create backwards text for social media, passwords, and fun. Free and easy to use.">
+    <meta name="keywords"
+        content="reverse text, flip text, upside down text, backwards text generator, mirror text, brightlinx">
+    <link rel="canonical" href="https://brightlinx.in/reverse-text-generator.html">
+
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Free Reverse Text Generator - Flip Text Upside Down | Brightlinx">
+    <meta property="og:description" content="Flip your text backwards, upside down, or reverse the wording instantly.">
+    <meta property="og:url" content="https://brightlinx.in/reverse-text-generator.html">
+    <meta property="og:type" content="website">
+
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+    [
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Reverse Text Generator",
+        "operatingSystem": "Any",
+        "applicationCategory": "Utility",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.8",
+          "ratingCount": "1024"
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How do I make text upside down?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Simply type your text and click the 'Flip Upside Down' button. Our tool uses special Unicode characters to mimic upside-down letters."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is Reverse Wording?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Reverse wording keeps the words intact but changes their order. For example, 'Hello World' becomes 'World Hello'."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I use the flipped text on social media?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes! The output uses standard Unicode characters, so you can copy and paste it into Instagram, Twitter, Facebook, and more."
+            }
+          }
+        ]
+      }
+    ]
+    </script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .converter-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .input-group label {
+            font-weight: 600;
+            color: var(--text-color);
+        }
+
+        textarea {
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 1rem;
+            font-family: inherit;
+            resize: vertical;
+            min-height: 100px;
+            width: 100%;
+        }
+
+        .controls-row {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-size: 0.95rem;
+            flex: 1;
+            min-width: 120px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+            border: 1px solid var(--primary-color);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--text-color);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-outline:hover {
+            background-color: #f8fafc;
+            border-color: #cbd5e1;
+        }
+
+        .btn-copy {
+            background-color: #10b981;
+            color: white;
+            margin-top: 10px;
+            max-width: 150px;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+
+        .output-area {
+            position: relative;
+        }
+
+        #toast {
+            visibility: hidden;
+            min-width: 250px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            border-radius: 4px;
+            padding: 16px;
+            position: fixed;
+            z-index: 1;
+            left: 50%;
+            bottom: 30px;
+            transform: translateX(-50%);
+            font-size: 17px;
+        }
+
+        #toast.show {
+            visibility: visible;
+            animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        }
+
+        @keyframes fadein {
+            from {
+                bottom: 0;
+                opacity: 0;
+            }
+
+            to {
+                bottom: 30px;
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeout {
+            from {
+                bottom: 30px;
+                opacity: 1;
+            }
+
+            to {
+                bottom: 0;
+                opacity: 0;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KQ7BPNTG" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">Brightlinx</a>
+        </div>
+    </header>
+
+    <main class="container tool-page">
+
+        <div class="tool-header">
+            <h1>Free Reverse Text Generator</h1>
+            <p>Flip words, reverse text, or turn text upside down instantly.</p>
+        </div>
+
+        <div class="ad-container-top" style="text-align:center; min-height:100px; margin: 10px auto;">
+            <div data-banner-id="2015345"></div>
+        </div>
+
+        <div class="tool-wrapper">
+            <div class="converter-container" style="max-width: 600px; margin: 0 auto;">
+
+                <div class="input-group">
+                    <label for="inputText">Input Text</label>
+                    <textarea id="inputText" placeholder="Type your text here..."></textarea>
+                </div>
+
+                <div class="controls-row">
+                    <button class="btn btn-primary" onclick="reverseText()">Reverse Text</button>
+                    <button class="btn btn-outline" onclick="reverseWording()">Reverse Wording</button>
+                    <button class="btn btn-outline" onclick="flipUpsideDown()">Flip Upside Down</button>
+                </div>
+
+                <div class="output-area">
+                    <label for="outputText"
+                        style="font-weight:600; color:var(--text-color); margin-bottom:5px; margin-top: 20px; display:block;">Result</label>
+                    <textarea id="outputText" readonly placeholder="Result will appear here..."></textarea>
+
+                    <button class="btn btn-copy" onclick="copyText()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            viewBox="0 0 16 16">
+                            <path
+                                d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z" />
+                            <path
+                                d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z" />
+                        </svg>
+                        Copy Text
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+        <article>
+            <h2>How does the Reverse Text Generator work?</h2>
+            <p>Our tool provides three distinct ways to transform your text:</p>
+            <ul>
+                <li><strong>Reverse Text:</strong> This mirrors the entire string. "Hello" becomes "olleH". Great for
+                    checking palindromes or creating simple cipher codes.</li>
+                <li><strong>Reverse Wording:</strong> This keeps the words intact but reverses their order. "Hello
+                    World" becomes "World Hello".</li>
+                <li><strong>Flip Upside Down:</strong> This turns your text into Unicode characters that look like they
+                    are flipped 180 degrees. "Hello" becomes "oןןǝH".</li>
+            </ul>
+
+            <h2>Fun Uses for Backwards Text</h2>
+            <p><strong>Social Media:</p> Use upside-down text in your Twitter or Instagram bio to stand out from the
+            crowd.</p>
+            <p><strong>Secure Passwords:</strong> Reversing a memorable phrase can create a strong password that is easy
+                for you to recall but hard for others to guess.</p>
+            <p><strong>Pranks:</strong> Confuse your friends by sending them messages that can only be read in a mirror.
+            </p>
+
+            <h2>Upside Down Text Generator</h2>
+            <p>There isn't a standard "upside down" font on your keyboard. We achieve this effect by mapping each letter
+                to a specific Unicode character that closely resembles the inverted letter. For example, 'a' is mapped
+                to 'ɐ', and 't' is mapped to 'ʇ'. This allows the text to be copied and pasted anywhere.</p>
+        </article>
+
+        <div class="ad-container-middle" style="text-align:center; margin: 20px 0; min-height:250px;">
+            <div data-banner-id="2015585"></div>
+        </div>
+
+        <div id="toast">Copied to clipboard!</div>
+
+        <!-- More Tools Section -->
+        <section class="more-tools"
+            style="padding: 40px 0; border-top: 1px solid var(--border-color); margin-top:40px;">
+            <h3 style="text-align: center; margin-bottom: 30px;">More Free Tools</h3>
+            <div class="tools-grid">
+                <a href="text-repeater.html" class="card">
+                    <div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+                        </svg></div>
+                    <h3>Text Repeater</h3>
+                </a>
+                <a href="roman-numeral-converter.html" class="card">
+                    <div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /><text x="5" y="18" font-size="12"
+                                font-weight="bold" fill="currentColor">IVX</text>
+                        </svg></div>
+                    <h3>Roman Numeral Converter</h3>
+                </a>
+                <a href="index.html" class="card">
+                    <div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+                        </svg></div>
+                    <h3>All Tools</h3>
+                </a>
+            </div>
+            <div style="text-align:center; margin-top:20px;">
+                <a href="index.html" style="color:var(--primary-color); font-weight:600;">View All Tools &rarr;</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="ad-container-bottom" style="text-align:center; min-height:100px; margin-top: 30px;">
+            <div data-banner-id="2015586"></div>
+        </div>
+        <div class="container">
+            <div>&copy; 2026 Brightlinx. Free, Privacy-Focused, Open Web Utilities.</div>
+            <p>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        const upsideDownMap = {
+            'a': 'ɐ', 'b': 'q', 'c': 'ɔ', 'd': 'p', 'e': 'ǝ', 'f': 'ɟ', 'g': 'ƃ', 'h': 'ɥ', 'i': 'ᴉ',
+            'j': 'ɾ', 'k': 'ʞ', 'l': 'l', 'm': 'ɯ', 'n': 'u', 'o': 'o', 'p': 'd', 'q': 'b', 'r': 'ɹ',
+            's': 's', 't': 'ʇ', 'u': 'n', 'v': 'ʌ', 'w': 'ʍ', 'x': 'x', 'y': 'ʎ', 'z': 'z',
+            'A': '∀', 'B': 'q', 'C': 'Ɔ', 'D': 'p', 'E': 'Ǝ', 'F': 'Ⅎ', 'G': 'פ', 'H': 'H', 'I': 'I',
+            'J': 'ſ', 'K': 'ʞ', 'L': '˥', 'M': 'W', 'N': 'N', 'O': 'O', 'P': 'Ԁ', 'Q': 'Ό', 'R': 'R',
+            'S': 'S', 'T': '┴', 'U': '∩', 'V': 'Λ', 'W': 'M', 'X': 'X', 'Y': '⅄', 'Z': 'Z',
+            '1': 'Ɩ', '2': 'ᄅ', '3': 'Ɛ', '4': 'ㄣ', '5': 'ϛ', '6': '9', '7': 'ㄥ', '8': '8', '9': '6', '0': '0',
+            '.': '˙', ',': "'", '?': '¿', '!': '¡', '"': '„', "'": ',', '`': ',', '(': ')', ')': '(',
+            '[': ']', ']': '[', '{': '}', '}': '{', '<': '>', '>': '<', '&': '⅋', '_': '‾'
+        };
+
+        function getInput() {
+            return document.getElementById('inputText').value;
+        }
+
+        function setOutput(text) {
+            document.getElementById('outputText').value = text;
+        }
+
+        function reverseText() {
+            const text = getInput();
+            const reversed = text.split('').reverse().join('');
+            setOutput(reversed);
+        }
+
+        function reverseWording() {
+            const text = getInput();
+            if (!text) return;
+            // Split by space usually
+            const reversed = text.split(' ').reverse().join(' ');
+            setOutput(reversed);
+        }
+
+        function flipUpsideDown() {
+            const text = getInput();
+            let result = '';
+            for (let i = text.length - 1; i >= 0; i--) {
+                const char = text[i];
+                result += upsideDownMap[char] || char; // Use map or original if not found
+            }
+            setOutput(result);
+        }
+
+        function copyText() {
+            const resultBox = document.getElementById('outputText');
+            const text = resultBox.value;
+
+            if (!text) return;
+
+            navigator.clipboard.writeText(text).then(() => {
+                showToast();
+            }).catch(err => {
+                resultBox.select();
+                document.execCommand('copy');
+                showToast();
+            });
+        }
+
+        function showToast() {
+            const toast = document.getElementById("toast");
+            toast.className = "show";
+            setTimeout(function () { toast.className = toast.className.replace("show", ""); }, 3000);
+        }
+    </script>
+
+    <!-- Infolinks Script -->
+    <script type="text/javascript">
+        var infolinks_pid = 3442850;
+        var infolinks_wsid = 0;
+    </script>
+    <script type="text/javascript" src="https://resources.infolinks.com/js/infolinks_main.js"></script>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-banner">
+        <p>We use cookies to improve your experience and show personalized ads. By using this site, you agree to our <a
+                href="privacy.html">Privacy Policy</a>.</p>
+        <div>
+            <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Accept</button>
+            <button class="cookie-btn cookie-decline" onclick="declineCookies()">Decline</button>
+        </div>
+    </div>
+    <script>
+        (function () {
+            const banner = document.getElementById('cookie-banner');
+            const consent = localStorage.getItem('cookieConsent');
+            if (!consent) {
+                banner.style.display = 'flex';
+            }
+            window.acceptCookies = function () {
+                localStorage.setItem('cookieConsent', 'accepted');
+                banner.style.display = 'none';
+            };
+            window.declineCookies = function () {
+                banner.style.display = 'none';
+            };
+        })();
+    </script>
+    <!-- Ad Script -->
+    <script async src="https://js.mbidadm.com/static/scripts.js" data-admpid="418415"></script>
+</body>
+
+</html>

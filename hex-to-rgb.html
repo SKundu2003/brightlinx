@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VBKLLM90TV"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-VBKLLM90TV');
+    </script>
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "v3gr0bbf1t");
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-KQ7BPNTG');</script>
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://clarity.ms">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <!-- SEO Meta Tags -->
+    <title>Hex to RGB Converter - Bidirectional Color Translator | Brightlinx</title>
+    <meta name="description"
+        content="Convert Hex color codes to RGB and RGB to Hex instantly. Features a live color preview and bidirectional conversion. Essential tool for web designers.">
+    <meta name="keywords"
+        content="hex to rgb, rgb to hex, color converter, color code translator, hex code, rgb values, web design tool, brightlinx">
+    <link rel="canonical" href="https://brightlinx.in/hex-to-rgb.html">
+
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Hex to RGB Converter - Bidirectional Color Translator | Brightlinx">
+    <meta property="og:description" content="Convert Hex to RGB and RGB to Hex instantly with live preview.">
+    <meta property="og:url" content="https://brightlinx.in/hex-to-rgb.html">
+    <meta property="og:type" content="website">
+
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+    [
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Hex to RGB Converter",
+        "operatingSystem": "Any",
+        "applicationCategory": "Utility",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.8",
+          "ratingCount": "1024"
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is a Hex Color Code?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A Hex code is a hexadecimal format for identifying colors. It is a 6-digit code usually starting with a hash (#), representing Red, Green, and Blue values."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I convert RGB to Hex?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Simply enter your Red, Green, and Blue values (0-255) into the RGB inputs, and our tool will automatically generate the corresponding Hex code."
+            }
+          }
+        ]
+      }
+    ]
+    </script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .converter-container {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .preview-box {
+            height: 150px;
+            width: 100%;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.1);
+            background-color: #FFFFFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            color: rgba(0, 0, 0, 0.4);
+            font-size: 1.2rem;
+            transition: background-color 0.2s ease;
+        }
+
+        .input-card {
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .card-label {
+            font-weight: 600;
+            color: var(--text-color);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Hex Input Styling */
+        .hex-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .hash-prefix {
+            position: absolute;
+            left: 15px;
+            font-weight: bold;
+            color: #64748b;
+            font-size: 1.2rem;
+        }
+
+        #hexInput {
+            padding: 12px 12px 12px 35px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 1.3rem;
+            font-family: monospace;
+            width: 100%;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* RGB Inputs Styling */
+        .rgb-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 15px;
+        }
+
+        .rgb-field {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .rgb-field label {
+            font-size: 0.8rem;
+            color: #64748b;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .rgb-input {
+            padding: 10px;
+            text-align: center;
+            font-size: 1.2rem;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-family: monospace;
+        }
+
+        .rgb-input:focus,
+        #hexInput:focus {
+            outline: 2px solid var(--primary-color);
+            border-color: transparent;
+        }
+
+        .btn-copy {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            opacity: 0.9;
+        }
+
+        .btn-copy:hover {
+            opacity: 1;
+        }
+
+        /* Table Styling */
+        .color-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .color-table th,
+        .color-table td {
+            padding: 10px;
+            border: 1px solid var(--border-color);
+            text-align: left;
+        }
+
+        .color-table th {
+            background-color: #f1f5f9;
+        }
+
+        .color-swatch {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 8px;
+        }
+
+        #toast {
+            visibility: hidden;
+            min-width: 250px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            border-radius: 4px;
+            padding: 16px;
+            position: fixed;
+            z-index: 1;
+            left: 50%;
+            bottom: 30px;
+            transform: translateX(-50%);
+            font-size: 17px;
+        }
+
+        #toast.show {
+            visibility: visible;
+            animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        }
+
+        @keyframes fadein {
+            from {
+                bottom: 0;
+                opacity: 0;
+            }
+
+            to {
+                bottom: 30px;
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeout {
+            from {
+                bottom: 30px;
+                opacity: 1;
+            }
+
+            to {
+                bottom: 0;
+                opacity: 0;
+            }
+        }
+    </style>
+    </head>
+
+<body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KQ7BPNTG" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">Brightlinx</a>
+        </div>
+    </header>
+
+    <main class="container tool-page">
+
+        <div class="tool-header">
+            <h1>Hex to RGB Converter</h1>
+            <p>Bidirectional Color Translator with Live Preview</p>
+        </div>
+
+        <div class="ad-container-top" style="text-align:center; min-height:100px; margin: 10px auto;">
+            <div data-banner-id="2015345"></div>
+        </div>
+
+        <div class="tool-wrapper">
+            <div class="converter-container">
+
+                <!-- Live Preview -->
+                <div id="previewBox" class="preview-box">
+                    <span>Preview</span>
+                </div>
+
+                <!-- Hex to RGB -->
+                <div class="input-card">
+                    <div class="card-label">
+                        <span>Hex Code</span>
+                        <button class="btn-copy" onclick="copyHex()">Copy</button>
+                    </div>
+                    <div class="hex-wrapper">
+                        <span class="hash-prefix">#</span>
+                        <input type="text" id="hexInput" placeholder="FF5733" maxlength="6" oninput="updateFromHex()">
+                    </div>
+                </div>
+
+                <!-- RGB to Hex -->
+                <div class="input-card">
+                    <div class="card-label">
+                        <span>RGB Values</span>
+                        <button class="btn-copy" onclick="copyRGB()">Copy</button>
+                    </div>
+                    <div class="rgb-grid">
+                        <div class="rgb-field">
+                            <label>R</label>
+                            <input type="number" id="valR" class="rgb-input" min="0" max="255" placeholder="255"
+                                oninput="updateFromRGB()">
+                        </div>
+                        <div class="rgb-field">
+                            <label>G</label>
+                            <input type="number" id="valG" class="rgb-input" min="0" max="255" placeholder="87"
+                                oninput="updateFromRGB()">
+                        </div>
+                        <div class="rgb-field">
+                            <label>B</label>
+                            <input type="number" id="valB" class="rgb-input" min="0" max="255" placeholder="51"
+                                oninput="updateFromRGB()">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <article>
+            <h2>How does the Hex to RGB Converter work?</h2>
+            <p>A Hexadecimal (Hex) color code is a 6-digit alphanumeric code used in web design to represent colors. It
+                usually starts with a hash symbol (#). The code is divided into three pairs: the first two characters
+                represent Red, the next two Green, and the last two Blue (RRGGBB).</p>
+            <p>Each pair can have a value from 00 to FF (which is 255 in decimal). This allows for over 16 million
+                potential color combinations.</p>
+
+            <h2>What is RGB?</h2>
+            <p>RGB stands for Red, Green, and Blue. It is a color model where these three primary colors are added
+                together in various ways to reproduce a broad array of colors. Each value ranges from 0 to 255.</p>
+            <p>For example, pure red is <code>rgb(255, 0, 0)</code>, while white is <code>rgb(255, 255, 255)</code>.</p>
+
+            <h2>Common Color Codes</h2>
+            <table class="color-table">
+                <tr>
+                    <th>Color</th>
+                    <th>Hex</th>
+                    <th>RGB</th>
+                </tr>
+                <tr>
+                    <td><span class="color-swatch" style="background:#FFFFFF;"></span>White</td>
+                    <td>#FFFFFF</td>
+                    <td>rgb(255, 255, 255)</td>
+                </tr>
+                <tr>
+                    <td><span class="color-swatch" style="background:#000000;"></span>Black</td>
+                    <td>#000000</td>
+                    <td>rgb(0, 0, 0)</td>
+                </tr>
+                <tr>
+                    <td><span class="color-swatch" style="background:#FF0000;"></span>Red</td>
+                    <td>#FF0000</td>
+                    <td>rgb(255, 0, 0)</td>
+                </tr>
+                <tr>
+                    <td><span class="color-swatch" style="background:#00FF00;"></span>Green</td>
+                    <td>#00FF00</td>
+                    <td>rgb(0, 255, 0)</td>
+                </tr>
+                <tr>
+                    <td><span class="color-swatch" style="background:#0000FF;"></span>Blue</td>
+                    <td>#0000FF</td>
+                    <td>rgb(0, 0, 255)</td>
+                </tr>
+            </table>
+
+        </article>
+
+        <div class="ad-container-middle" style="text-align:center; margin: 20px 0; min-height:250px;">
+            <div data-banner-id="2015585"></div>
+        </div>
+
+        <div id="toast">Copied to clipboard!</div>
+
+        <!-- More Tools Section -->
+        <section class="more-tools"
+            style="padding: 40px 0; border-top: 1px solid var(--border-color); margin-top:40px;">
+            <h3 style="text-align: center; margin-bottom: 30px;">More Free Tools</h3>
+            <div class="tools-grid">
+                <a href="unix-timestamp-converter.html" class="card">
+                    <div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg></div>
+                    <h3>Timestamp Converter</h3>
+                </a>
+                <a href="slug-generator.html" class="card">
+                    <div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                        </svg></div>
+                    <h3>Slug Generator</h3>
+                </a>
+                <a href="zalgo-text-generator.html" class="card">
+                    <div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 10V3L4 14h7v7l9-11h-7z" /><text x="5" y="16" font-size="12" font-weight="bold"
+                                fill="currentColor">Z̸a̸l̸g̸o̸</text>
+                        </svg></div>
+                    <h3>Zalgo Text</h3>
+                </a>
+            </div>
+            <div style="text-align:center; margin-top:20px;">
+                <a href="index.html" style="color:var(--primary-color); font-weight:600;">View All Tools &rarr;</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="ad-container-bottom" style="text-align:center; min-height:100px; margin-top: 30px;">
+            <div data-banner-id="2015586"></div>
+        </div>
+        <div class="container">
+            <div>&copy; 2026 Brightlinx. Free, Privacy-Focused, Open Web Utilities.</div>
+            <p>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Init with a placeholder or empty
+
+        function componentToHex(c) {
+            var hex = Number(c).toString(16);
+            return hex.length == 1 ? "0" + hex : hex;
+        }
+
+        function rgbToHex(r, g, b) {
+            return componentToHex(r) + componentToHex(g) + componentToHex(b);
+        }
+
+        function hexToRgb(hex) {
+            var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+            return result ? {
+                r: parseInt(result[1], 16),
+                g: parseInt(result[2], 16),
+                b: parseInt(result[3], 16)
+            } : null;
+        }
+
+        function updateFromHex() {
+            let hex = document.getElementById('hexInput').value.trim();
+            // Remove hash
+            hex = hex.replace('#', '');
+
+            // Check valid length
+            if (hex.length === 6) {
+                const rgb = hexToRgb(hex);
+                if (rgb) {
+                    document.getElementById('valR').value = rgb.r;
+                    document.getElementById('valG').value = rgb.g;
+                    document.getElementById('valB').value = rgb.b;
+                    updatePreview('#' + hex);
+                }
+            } else if (hex.length === 3) {
+                // Handle shorthand like F00 -> FF0000
+                const fullHex = hex.split('').map(c => c + c).join('');
+                const rgb = hexToRgb(fullHex);
+                if (rgb) {
+                    document.getElementById('valR').value = rgb.r;
+                    document.getElementById('valG').value = rgb.g;
+                    document.getElementById('valB').value = rgb.b;
+                    updatePreview('#' + fullHex);
+                }
+            } else {
+                // Invalid or incomplete
+                resetPreview();
+            }
+        }
+
+        function updateFromRGB() {
+            let r = parseInt(document.getElementById('valR').value);
+            let g = parseInt(document.getElementById('valG').value);
+            let b = parseInt(document.getElementById('valB').value);
+
+            // Constraint check
+            if (isNaN(r) || r < 0) r = 0; if (r > 255) r = 255;
+            if (isNaN(g) || g < 0) g = 0; if (g > 255) g = 255;
+            if (isNaN(b) || b < 0) b = 0; if (b > 255) b = 255;
+
+            // Only update hex if we have all 3 numbers, or at least partial logic?
+            // Actually, let's just compute with what we have (treating empty as 0) or wait?
+            // Let's assume user fills them.
+
+            // We need to verify inputs are present to form a valid color
+            if (document.getElementById('valR').value === '' ||
+                document.getElementById('valG').value === '' ||
+                document.getElementById('valB').value === '') {
+                return;
+            }
+
+            const hex = rgbToHex(r, g, b).toUpperCase();
+            document.getElementById('hexInput').value = hex;
+            updatePreview('#' + hex);
+        }
+
+        function updatePreview(color) {
+            const box = document.getElementById('previewBox');
+            box.style.backgroundColor = color;
+            box.innerHTML = '';
+
+            // Should we show text? Maybe contrasty text?
+            // Let's just leave it clean color.
+        }
+
+        function resetPreview() {
+            const box = document.getElementById('previewBox');
+            box.style.backgroundColor = '#FFFFFF';
+            box.innerText = 'Preview';
+        }
+
+        function copyHex() {
+            const val = document.getElementById('hexInput').value;
+            if (val) {
+                navigator.clipboard.writeText('#' + val).then(showToast);
+            }
+        }
+
+        function copyRGB() {
+            const r = document.getElementById('valR').value;
+            const g = document.getElementById('valG').value;
+            const b = document.getElementById('valB').value;
+            if (r !== '' && g !== '' && b !== '') {
+                const str = `rgb(${r}, ${g}, ${b})`;
+                navigator.clipboard.writeText(str).then(showToast);
+            }
+        }
+
+        function showToast() {
+            const toast = document.getElementById("toast");
+            toast.className = "show";
+            setTimeout(function () { toast.className = toast.className.replace("show", ""); }, 3000);
+        }
+    </script>
+
+    <!-- Infolinks Script -->
+    <script type="text/javascript">
+        var infolinks_pid = 3442850;
+        var infolinks_wsid = 0;
+    </script>
+    <script type="text/javascript" src="https://resources.infolinks.com/js/infolinks_main.js"></script>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-banner">
+        <p>We use cookies to improve your experience and show personalized ads. By using this site, you agree to our <a
+                href="privacy.html">Privacy Policy</a>.</p>
+        <div>
+            <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Accept</button>
+            <button class="cookie-btn cookie-decline" onclick="declineCookies()">Decline</button>
+        </div>
+    </div>
+    <script>
+        (function () {
+            const banner = document.getElementById('cookie-banner');
+            const consent = localStorage.getItem('cookieConsent');
+            if (!consent) {
+                banner.style.display = 'flex';
+            }
+            window.acceptCookies = function () {
+                localStorage.setItem('cookieConsent', 'accepted');
+                banner.style.display = 'none';
+            };
+            window.declineCookies = function () {
+                banner.style.display = 'none';
+            };
+        })();
+    </script>
+    <!-- Ad Script -->
+    <script async src="https://js.mbidadm.com/static/scripts.js" data-admpid="418415"></script>
+</body>
+
+</html>

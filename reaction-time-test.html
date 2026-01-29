@@ -32,20 +32,18 @@
     <link rel="preconnect" href="https://www.googletagmanager.com">
     <link rel="preconnect" href="https://clarity.ms">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-
     <!-- SEO Meta Tags -->
-    <title>Case Converter - Free & Instant Text Transformation | Brightlinx</title>
+    <title>Reaction Time Test - Check Your Reflexes (ms) | Brightlinx</title>
     <meta name="description"
-        content="Convert text case instantly: Uppercase to Lowercase, Title Case, Sentence Case. Free, secure, and instant online text tool by Brightlinx. No signup.">
+        content="Test your visual reaction time in milliseconds. Are you faster than a pro gamer? Free online reflex test and human benchmark tool.">
     <meta name="keywords"
-        content="case converter, text converter, uppercase to lowercase, title case generator, sentence case tool, text transformation, brightlinx utilities">
-    <link rel="canonical" href="https://brightlinx.in/case-converter.html">
+        content="reaction time test, reflex test, click speed test, human benchmark, reaction test, millisecond test, gamer reflex test, brightlinx">
+    <link rel="canonical" href="https://brightlinx.in/reaction-time-test.html">
 
     <!-- Open Graph Tags -->
-    <meta property="og:title" content="Case Converter - Free & Instant Text Transformation | Brightlinx">
-    <meta property="og:description"
-        content="Easily convert text between Uppercase, Lowercase, and Title Case. Instant & Free.">
-    <meta property="og:url" content="https://brightlinx.in/case-converter.html">
+    <meta property="og:title" content="Reaction Time Test - Check Your Reflexes (ms) | Brightlinx">
+    <meta property="og:description" content="Test your reflexes now! How fast can you click?">
+    <meta property="og:url" content="https://brightlinx.in/reaction-time-test.html">
     <meta property="og:type" content="website">
 
     <!-- JSON-LD Schema -->
@@ -54,9 +52,9 @@
       {
         "@context": "https://schema.org",
         "@type": "SoftwareApplication",
-        "name": "Case Converter",
+        "name": "Reaction Time Test",
         "operatingSystem": "Any",
-        "applicationCategory": "Utility",
+        "applicationCategory": "Game",
         "offers": {
           "@type": "Offer",
           "price": "0",
@@ -74,75 +72,116 @@
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "Is this tool free to use?",
+            "name": "What is a good reaction time?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes, Brightlinx Case Converter is 100% free with no limits."
+              "text": "The average human reaction time to visual stimuli is around 250 milliseconds (ms). Anything under 200ms is considered very fast."
             }
           },
           {
             "@type": "Question",
-            "name": "Does it save my text?",
+            "name": "How can I improve my reaction time?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "No. The conversion happens entirely in your browser using JavaScript. We do not store or see your text."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Does it work with all languages?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "It works with most languages that use the Latin alphabet (English, Spanish, French, etc)."
+              "text": "Regular practice, staying hydrated, getting enough sleep, and playing fast-paced video games can help improve your reflexes."
             }
           }
         ]
       }
     ]
     </script>
-
     <link rel="stylesheet" href="style.css">
     <style>
-        .tool-controls {
+        .game-wrapper {
+            max-width: 700px;
+            margin: 0 auto 40px auto;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        .reaction-box {
+            width: 100%;
+            height: 400px;
+            border-radius: 16px;
             display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-top: 16px;
-            margin-bottom: 16px;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background-color 0.1s;
+            text-align: center;
+            padding: 20px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
         }
 
-        .tool-controls button {
-            flex: 1 1 auto;
-            min-width: 120px;
+        .reaction-box h2 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            font-weight: 800;
         }
 
-        .utility-controls {
-            display: flex;
-            justify-content: flex-end;
-            gap: 12px;
-            margin-top: 12px;
-            border-top: 1px solid var(--border-color);
-            padding-top: 12px;
+        .reaction-box p {
+            font-size: 1.2rem;
+            font-weight: 500;
+            opacity: 0.9;
         }
 
-        .btn-secondary {
+        .icon-large {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 20px;
+        }
+
+        /* States */
+        .state-idle {
+            background-color: #2b87d1;
+            color: white;
+        }
+
+        .state-wait {
+            background-color: #ce2636;
+            color: white;
+        }
+
+        .state-go {
+            background-color: #4bdb6a;
+            color: white;
+        }
+
+        .state-result {
             background-color: white;
             color: var(--text-color);
-            border: 1px solid var(--border-color);
-            padding: 10px 20px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.2s;
+            border: 2px solid var(--border-color);
         }
 
-        .btn-secondary:hover {
-            border-color: var(--primary-color);
+        .state-result h2 {
             color: var(--primary-color);
         }
 
-        #text-input {
-            min-height: 200px;
-            resize: vertical;
+        .btn-restart {
+            margin-top: 20px;
+            padding: 10px 25px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .btn-restart:hover {
+            opacity: 0.9;
+        }
+
+        @media (max-width: 600px) {
+            .reaction-box {
+                height: 300px;
+            }
+
+            .reaction-box h2 {
+                font-size: 2rem;
+            }
         }
     </style>
     <!-- Complex Ad Script -->
@@ -160,141 +199,103 @@
         </div>
     </header>
 
-    <main class="tool-page container">
+    <main class="container tool-page">
 
         <div class="tool-header">
-            <h1>Free Online Case Converter</h1>
-            <p class="lead">Convert your text to any case format instantly using our fast and free, secure tool.</p>
+            <h1>Reaction Time Test</h1>
+            <p>Reflex Benchmark · Millisecond Precision</p>
         </div>
 
-        <!-- Ad Unit 1 -->
-        <div class="ad-container-top" style="display:flex; justify-content:center; margin: 20px 0; min-height:90px;">
+        <div class="game-wrapper">
+            <div id="gameBox" class="reaction-box state-idle" onmousedown="handleClick()">
+                <div id="icon" class="icon-large">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                </div>
+                <h2 id="mainText">Click to Start</h2>
+                <p id="subText">When the box turns green, click as fast as you can.</p>
+                <button id="btnRetry" class="btn-restart" style="display:none;" onclick="resetGame(event)">Try
+                    Again</button>
+            </div>
+        </div>
+
+        <!-- Ad Container Below Game -->
+        <div class="ad-container-middle"
+            style="display:flex; justify-content:center; margin-bottom:40px; min-height:250px;">
             <div data-banner-id="2015345"></div>
         </div>
 
-        <section class="tool-wrapper">
-            <textarea id="text-input" placeholder="Type or paste your content here..."></textarea>
+        <article>
+            <h2>How does the Reaction Time Test work?</h2>
+            <p>The <strong>Reaction Time Test</strong> measures the time it takes for you to recognize a color change
+                (visual stimulus) and click your mouse or tap your screen (physical response). It connects directly to
+                your device's clock to provide millisecond-precise results.</p>
+            <h3>What is a good reaction time?</h3>
+            <p>Reaction time is the duration between the onset of a stimulus and your physical response to it. For
+                visual stimuli, the average human reaction time is approximately <strong>250 milliseconds (ms)</strong>.
+                World-class athletes and professional gamers can achieve speeds between 150ms and 200ms.</p>
+            <p>Factors such as age, fatigue, and distraction can significantly impact your score. This test measures
+                your raw visual reflexes in a controlled environment.</p>
 
-            <div class="tool-controls">
-                <button class="btn-primary" onclick="convert('upper')">UPPERCASE</button>
-                <button class="btn-primary" onclick="convert('lower')">lowercase</button>
-                <button class="btn-primary" onclick="convert('title')">Title Case</button>
-                <button class="btn-primary" onclick="convert('sentence')">Sentence case</button>
-                <button class="btn-primary" onclick="convert('alternating')">aLtErNaTiNg</button>
-            </div>
+            <h2>How to improve your reflexes?</h2>
+            <p>Improving your reaction time is possible with training and lifestyle adjustments:</p>
+            <ul>
+                <li><strong>Practice:</strong> Activities like gaming, martial arts, or ball sports train your brain to
+                    process visual information faster.</li>
+                <li><strong>Sleep:</strong> Lack of sleep severely increases latency in cognitive processing.</li>
+                <li><strong>Hydration:</strong> Even mild dehydration can slow down neural transmission.</li>
+            </ul>
 
-            <div class="utility-controls">
-                <button class="btn-secondary" onclick="copyText()">Copy to Clipboard</button>
-                <button class="btn-secondary" onclick="clearText()">Clear</button>
-            </div>
-            <p id="msg"
-                style="color: green; text-align: right; margin-top: 8px; font-size: 0.9rem; opacity: 0; transition: opacity 0.3s;">
-                Text Copied!</p>
-        </section>
+            <h2>Human Benchmark Standards</h2>
+            <p>Compare your score:</p>
+            <ul>
+                <li><strong>&lt; 150ms:</strong> Superhuman (F1 Driver level)</li>
+                <li><strong>150ms - 200ms:</strong> Excellent (Pro Gamer)</li>
+                <li><strong>215ms:</strong> Very Good</li>
+                <li><strong>250ms:</strong> Average</li>
+                <li><strong>&gt; 500ms:</strong> Slow (Did you blink?)</li>
+            </ul>
+        </article>
 
-        <!-- Ad Unit 2 -->
-        <div class="ad-container-middle"
-            style="display:flex; justify-content:center; margin: 20px 0; min-height:250px;">
+        <div class="ad-container-bottom"
+            style="display:flex; justify-content:center; margin: 40px 0; min-height:250px;">
             <div data-banner-id="2015349"></div>
         </div>
 
-        <!-- SEO Content -->
-        <article>
-            <h2>How does the Case Converter work?</h2>
-            <p>The Brightlinx Case Converter is a free, handy web utility designed to allow you to immediately change
-                the capitalization style of any text. Whether you accidentally left Caps Lock on, need to format a title
-                for a blog post, or just want to standardize a list of names, this tool does the heavy lifting for you
-                in seconds.</p>
-            <p>Unlike complex word processors, this tool is lightweight, runs entirely in your browser, and requires no
-                downloads or installations. It respects your privacy by processing all data locally on your device.</p>
-
-            <h2>How to Use It?</h2>
-            <ul>
-                <li><strong>Step 1:</strong> Type or paste your text into the large text area box above.</li>
-                <li><strong>Step 2:</strong> Click on one of the conversion buttons to transform your text:
-                    <ul>
-                        <li><em>UPPERCASE:</em> Converts all letters to capitals.</li>
-                        <li><em>lowercase:</em> Converts all letters to small letters.</li>
-                        <li><em>Title Case:</em> Capitalizes The First Letter Of Each Word (great for headlines).</li>
-                        <li><em>Sentence case:</em> Capitalizes only the first letter of the first word in each
-                            sentence.</li>
-                    </ul>
-                </li>
-                <li><strong>Step 3:</strong> Once satisfied, click "Copy to Clipboard" to grab your converted text, or
-                    "Clear" to start over.</li>
-            </ul>
-
-            <h2>Why Use an Online Case Converter?</h2>
-            <p>Formatting text manually can be tedious and prone to errors. If you have a document with hundreds of
-                words, manually changing the case of each letter would take hours. Our tool automates this process,
-                saving you valuable time and ensuring 100% accuracy.</p>
-            <p>It is particularly useful for:</p>
-            <ul>
-                <li><strong>Writers & Editors:</strong> Quickly fix headlines or subheadings.</li>
-                <li><strong>Students:</strong> Correct capitalization in essays and citations.</li>
-                <li><strong>Programmers:</strong> Convert variable names or data strings.</li>
-                <li><strong>Social Media Managers:</strong> Style captions for better engagement.</li>
-            </ul>
-
-            <h2>Frequently Asked Questions (FAQ)</h2>
-            <div itemscope itemtype="https://schema.org/FAQPage">
-                <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                    <h3 itemprop="name">Is this tool free to use?</h3>
-                    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                        <p itemprop="text">Yes, the Brightlinx Case Converter is 100% free to use with no hidden costs
-                            or subscription requirements.</p>
-                    </div>
-                </div>
-                <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                    <h3 itemprop="name">Does it save my text?</h3>
-                    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                        <p itemprop="text">No. The conversion happens entirely in your browser using JavaScript. We do
-                            not store or see your text.</p>
-                    </div>
-                </div>
-                <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                    <h3 itemprop="name">Does it work with all languages?</h3>
-                    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                        <p itemprop="text">It works with most languages that use the Latin alphabet (English, Spanish,
-                            French, etc). Complex scripts might require specialized tools.</p>
-                    </div>
-                </div>
-            </div>
-        </article>
-
         <!-- More Tools Section -->
         <section class="more-tools"
-            style="margin-top: 60px; padding: 40px 0; border-top: 1px solid var(--border-color);">
+            style="padding: 40px 0; border-top: 1px solid var(--border-color); margin-top:40px;">
             <h3 style="text-align: center; margin-bottom: 30px;">More Free Tools</h3>
-            <div
-                style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; text-align: center;">
-                <a href="text-to-binary.html"
-                    style="padding: 12px; background: #f8fafc; border-radius: 8px; text-decoration: none; color: var(--text-color); font-weight: 500; border: 1px solid var(--border-color); transition: all 0.2s;">Binary
-                    Converter</a>
-                <a href="word-counter.html"
-                    style="padding: 12px; background: #f8fafc; border-radius: 8px; text-decoration: none; color: var(--text-color); font-weight: 500; border: 1px solid var(--border-color); transition: all 0.2s;">Word
-                    Counter</a>
-                <a href="password-generator.html"
-                    style="padding: 12px; background: #f8fafc; border-radius: 8px; text-decoration: none; color: var(--text-color); font-weight: 500; border: 1px solid var(--border-color); transition: all 0.2s;">Password
-                    Generator</a>
-                <a href="upside-down-text.html"
-                    style="padding: 12px; background: #f8fafc; border-radius: 8px; text-decoration: none; color: var(--text-color); font-weight: 500; border: 1px solid var(--border-color); transition: all 0.2s;">Upside
-                    Down Text</a>
-                <a href="emoji-remover.html"
-                    style="padding: 12px; background: #f8fafc; border-radius: 8px; text-decoration: none; color: var(--text-color); font-weight: 500; border: 1px solid var(--border-color); transition: all 0.2s;">Emoji
-                    Remover</a>
-                <a href="remove-duplicates.html"
-                    style="padding: 12px; background: #f8fafc; border-radius: 8px; text-decoration: none; color: var(--text-color); font-weight: 500; border: 1px solid var(--border-color); transition: all 0.2s;">Remove
-                    Duplicates</a>
-                <a href="age-calculator.html"
-                    style="padding: 12px; background: #f8fafc; border-radius: 8px; text-decoration: none; color: var(--text-color); font-weight: 500; border: 1px solid var(--border-color); transition: all 0.2s;">Age
-                    Calculator</a>
-                <a href="stopwatch.html"
-                    style="padding: 12px; background: #f8fafc; border-radius: 8px; text-decoration: none; color: var(--text-color); font-weight: 500; border: 1px solid var(--border-color); transition: all 0.2s;">Stopwatch
-                    & Timer</a>
-                <a href="lorem-ipsum.html"
-                    style="padding: 12px; background: #f8fafc; border-radius: 8px; text-decoration: none; color: var(--text-color); font-weight: 500; border: 1px solid var(--border-color); transition: all 0.2s;">Lorem
-                    Ipsum</a>
+            <div class="tools-grid">
+                <a href="love-calculator.html" class="card">
+                    <div class="card-icon" style="color:#ec4899;"><svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                        </svg></div>
+                    <h3>Love Calculator</h3>
+                </a>
+                <a href="age-calculator.html" class="card">
+                    <div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg></div>
+                    <h3>Age Calculator</h3>
+                </a>
+                <a href="unix-timestamp-converter.html" class="card">
+                    <div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg></div>
+                    <h3>Timestamp Converter</h3>
+                </a>
+            </div>
+            <div style="text-align:center; margin-top:20px;">
+                <a href="index.html" style="color:var(--primary-color); font-weight:600;">View All Tools &rarr;</a>
             </div>
         </section>
 
@@ -313,62 +314,105 @@
     </footer>
 
     <script>
-        const textarea = document.getElementById('text-input');
-        const msg = document.getElementById('msg');
+        // States: 'idle', 'waiting', 'clickable', 'result'
+        let state = 'idle';
+        let startTime = 0;
+        let timerId = null;
 
-        function convert(type) {
-            let text = textarea.value;
-            if (!text) return;
+        const box = document.getElementById('gameBox');
+        const mainText = document.getElementById('mainText');
+        const subText = document.getElementById('subText');
+        const icon = document.getElementById('icon');
+        const btnRetry = document.getElementById('btnRetry');
 
-            switch (type) {
-                case 'upper':
-                    textarea.value = text.toUpperCase();
-                    break;
-                case 'lower':
-                    textarea.value = text.toLowerCase();
-                    break;
-                case 'title':
-                    textarea.value = text.toLowerCase().split(' ').map(function (word) {
-                        return (word.charAt(0).toUpperCase() + word.slice(1));
-                    }).join(' ');
-                    break;
-                case 'sentence':
-                    textarea.value = text.toLowerCase().replace(/(^\s*\w|[\.\!\?]\s*\w)/g, function (c) {
-                        return c.toUpperCase();
-                    });
-                    break;
-                case 'alternating':
-                    let chars = text.toLowerCase().split("");
-                    for (let i = 0; i < chars.length; i += 2) {
-                        chars[i] = chars[i].toUpperCase();
-                    }
-                    textarea.value = chars.join("");
-                    break;
+        // Lighting bolt icon
+        const boltIcon = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>`;
+        const waitingIcon = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z" /></svg>`;
+        const errorIcon = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>`;
+
+        function setState(newState) {
+            state = newState;
+            box.className = 'reaction-box state-' + (newState === 'waiting' ? 'wait' : newState === 'clickable' ? 'go' : newState);
+
+            // Allow retry button only in result or too-soon (which is essentially result state visually but handled ad-hoc)
+            btnRetry.style.display = 'none';
+        }
+
+        function handleClick() {
+            if (state === 'idle') {
+                // Start waiting
+                setState('waiting');
+                mainText.innerText = "Wait for Green...";
+                subText.innerText = "";
+                icon.innerHTML = waitingIcon;
+
+                const randomDelay = Math.floor(Math.random() * 3000) + 2000; // 2s - 5s
+                timerId = setTimeout(() => {
+                    // Go!
+                    setState('clickable');
+                    mainText.innerText = "CLICK NOW!";
+                    subText.innerText = "";
+                    icon.innerHTML = boltIcon;
+                    startTime = Date.now();
+                }, randomDelay);
+
+            } else if (state === 'waiting') {
+                // Too soon
+                clearTimeout(timerId);
+                setState('result'); // Use white bg per request
+                box.style.backgroundColor = "#ce2636"; // Override to RED for error? Or Blue? User said "Too Soon! Try again."
+                // I'll stick to a "Blue" idle-like or just Red for failure?
+                // Request said: If user clicks while red (too early)...
+
+                // Let's use a distinct look for 'too soon'
+                box.className = 'reaction-box';
+                box.style.backgroundColor = '#ce2636';
+                box.style.color = 'white';
+
+                mainText.innerText = "Too Soon!";
+                subText.innerText = "Click only when the box turns green.";
+                icon.innerHTML = errorIcon;
+                state = 'idle'; // Reset state logic to allow immediate restart by clicking again? 
+                // A click here would restart.
+                // Or showing "Try Again" text.
+                // Let's make it so clicking again restarts.
+                subText.innerText += " Click to try again.";
+
+            } else if (state === 'clickable') {
+                // Success
+                const reactionTime = Date.now() - startTime;
+                setState('result');
+                mainText.innerText = reactionTime + " ms";
+                subText.innerText = "Click to keep trying";
+                icon.innerHTML = boltIcon;
+
+                // User said "Result: White Background"
+                // My .state-result class handles that.
+            } else if (state === 'result') {
+                // Click to restart
+                resetGame();
             }
         }
 
-        function copyText() {
-            if (!textarea.value) return;
-            textarea.select();
-            document.execCommand('copy');
-
-            // Show toast
-            msg.style.opacity = 1;
-            setTimeout(() => {
-                msg.style.opacity = 0;
-            }, 2000);
+        function resetGame(e) {
+            if (e) e.stopPropagation(); // prevent triggering click on parent
+            setState('idle');
+            mainText.innerText = "Click to Start";
+            subText.innerText = "When the box turns green, click as fast as you can.";
+            icon.innerHTML = boltIcon;
+            box.style.backgroundColor = ''; // Remove inline styles if any
+            box.style.color = '';
         }
 
-        function clearText() {
-            textarea.value = '';
-        }
     </script>
+
     <!-- Infolinks Script -->
     <script type="text/javascript">
         var infolinks_pid = 3442850;
         var infolinks_wsid = 0;
     </script>
     <script type="text/javascript" src="https://resources.infolinks.com/js/infolinks_main.js"></script>
+
     <!-- Cookie Consent Banner -->
     <div id="cookie-banner">
         <p>We use cookies to improve your experience and show personalized ads. By using this site, you agree to our <a

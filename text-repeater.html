@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VBKLLM90TV"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-VBKLLM90TV');
+    </script>
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "v3gr0bbf1t");
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-KQ7BPNTG');</script>
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://clarity.ms">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <!-- SEO Meta Tags -->
+    <title>Free Text Repeater - Repeat Text 100 Times Instantly | Brightlinx</title>
+    <meta name="description"
+        content="Repeat text, words, or emojis as many times as you want. Copy and share repeated text on WhatsApp, Instagram, and Discord directly. Free online tool.">
+    <meta name="keywords"
+        content="text repeater, repeat text, spam text, text multiplier, repeat word, whatsapp bomber, brightlinx">
+    <link rel="canonical" href="https://brightlinx.in/text-repeater.html">
+
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Free Text Repeater - Repeat Text 100 Times Instantly | Brightlinx">
+    <meta property="og:description"
+        content="Repeat any text or emoji up to 10,000 times instantly. Perfect for messages and pranks.">
+    <meta property="og:url" content="https://brightlinx.in/text-repeater.html">
+    <meta property="og:type" content="website">
+
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+    [
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Text Repeater",
+        "operatingSystem": "Any",
+        "applicationCategory": "Utility",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.8",
+          "ratingCount": "1024"
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How many times can I repeat text?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "You can repeat text up to 10,000 times with our tool. This limit ensures your browser stays fast and responsive."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does it support emojis?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes! You can repeat emojis, special characters, and text in any language."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is it free for WhatsApp?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, completely free. You can use the 'Share on WhatsApp' button to send the repeated text directly."
+            }
+          }
+        ]
+      }
+    ]
+    </script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .converter-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .input-group label {
+            font-weight: 600;
+            color: var(--text-color);
+        }
+
+        .input-group input,
+        .input-group textarea,
+        .input-group select {
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+
+        .input-group textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .controls-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-secondary {
+            background-color: #10b981;
+            color: white;
+        }
+
+        .btn-whatsapp {
+            background-color: #25D366;
+            color: white;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+
+        .output-area {
+            position: relative;
+        }
+
+        #toast {
+            visibility: hidden;
+            min-width: 250px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            border-radius: 4px;
+            padding: 16px;
+            position: fixed;
+            z-index: 1;
+            left: 50%;
+            bottom: 30px;
+            transform: translateX(-50%);
+            font-size: 17px;
+        }
+
+        #toast.show {
+            visibility: visible;
+            animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        }
+
+        @keyframes fadein {
+            from {
+                bottom: 0;
+                opacity: 0;
+            }
+
+            to {
+                bottom: 30px;
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeout {
+            from {
+                bottom: 30px;
+                opacity: 1;
+            }
+
+            to {
+                bottom: 0;
+                opacity: 0;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .controls-row {
+                grid-template-columns: 1fr;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KQ7BPNTG" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">Brightlinx</a>
+        </div>
+    </header>
+
+    <main class="container tool-page">
+
+        <div class="tool-header">
+            <h1>Free Text Repeater</h1>
+            <p>Repeat any text, emoji, or message up to 10,000 times instantly.</p>
+        </div>
+
+        <div class="ad-container-top" style="text-align:center; min-height:100px; margin: 10px auto;">
+            <div data-banner-id="2015345"></div>
+        </div>
+
+        <div class="tool-wrapper">
+            <div class="converter-container" style="max-width: 600px; margin: 0 auto;">
+
+                <div class="input-group">
+                    <label for="inputText">Text to Repeat</label>
+                    <textarea id="inputText" placeholder="Type something here..."></textarea>
+                </div>
+
+                <div class="controls-row">
+                    <div class="input-group">
+                        <label for="repeatCount">Repetitions (Limit: 10,000)</label>
+                        <input type="number" id="repeatCount" value="10" min="1" max="10000">
+                    </div>
+                    <div class="input-group">
+                        <label for="separator">Separator</label>
+                        <select id="separator">
+                            <option value="\n">New Line</option>
+                            <option value=" ">Space</option>
+                            <option value=", ">Comma</option>
+                            <option value=". ">Period</option>
+                            <option value="">None</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button class="btn btn-primary" onclick="repeatText()">Repeat Text</button>
+                    <button class="btn btn-secondary" onclick="copyText()">Copy Text</button>
+                    <button class="btn btn-whatsapp" onclick="shareWhatsapp()">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                            <path
+                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                        </svg>
+                        Share on WhatsApp
+                    </button>
+                </div>
+
+                <div class="output-area">
+                    <label for="outputText"
+                        style="font-weight:600; color:var(--text-color); margin-bottom:5px; display:block;">Result</label>
+                    <textarea id="outputText" readonly placeholder="Result will appear here..."></textarea>
+                </div>
+
+            </div>
+        </div>
+
+        <article>
+            <h2>How does the Text Repeater work?</h2>
+            <p>Using our text repeater is incredibly simple, just follow these 3 steps:</p>
+            <ol>
+                <li>Type the text or emoji you want to repeat in the "Text to Repeat" box.</li>
+                <li>Enter the number of times you want to repeat it (up to 10,000 times).</li>
+                <li>Choose your separator (like a new line or a space) and click "Repeat Text".</li>
+            </ol>
+            <p>Once generated, you can copy it with one click or share it directly to WhatsApp to surprise your friends.
+            </p>
+
+            <h2>Features of this Tool</h2>
+            <p><strong>Newline Support:</strong> Unlike some basic repeaters, we allow you to separate each repetition
+                with a new line, making it perfect for long lists or vertical text art.</p>
+            <p><strong>Emoji Compatible:</strong> Works perfectly with all emojis, special characters, and non-English
+                scripts.</p>
+            <p><strong>Instant Copy:</strong> Our "Copy Text" button ensures you can grab your 10,000 words in a
+                microsecond without selecting them manually.</p>
+
+            <h2>Why use a Text Repeater?</h2>
+            <p>Text repeaters are popularly used for sending playful messages to friends (often called "text bombing" in
+                a friendly context), creating emphasis in social media posts, or generating filler text for testing
+                designs. Whether you want to say "I love you" 100 times or create a wall of text for a Discord server,
+                this tool handles it instantly.</p>
+        </article>
+
+        <div class="ad-container-middle" style="text-align:center; margin: 20px 0; min-height:250px;">
+            <div data-banner-id="2015585"></div>
+        </div>
+
+        <div id="toast">Copied to clipboard!</div>
+
+        <!-- More Tools Section -->
+        <section class="more-tools"
+            style="padding: 40px 0; border-top: 1px solid var(--border-color); margin-top:40px;">
+            <h3 style="text-align: center; margin-bottom: 30px;">More Free Tools</h3>
+            <div class="tools-grid">
+                <a href="roman-numeral-converter.html" class="card">
+                    <div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /><text x="5" y="18" font-size="12"
+                                font-weight="bold" fill="currentColor">IVX</text>
+                        </svg></div>
+                    <h3>Roman Numeral Converter</h3>
+                </a>
+                <a href="days-between-dates.html" class="card">
+                    <div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg></div>
+                    <h3>Days Between Dates</h3>
+                </a>
+                <a href="index.html" class="card">
+                    <div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+                        </svg></div>
+                    <h3>All Tools</h3>
+                </a>
+            </div>
+            <div style="text-align:center; margin-top:20px;">
+                <a href="index.html" style="color:var(--primary-color); font-weight:600;">View All Tools &rarr;</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="ad-container-bottom" style="text-align:center; min-height:100px; margin-top: 30px;">
+            <div data-banner-id="2015586"></div>
+        </div>
+        <div class="container">
+            <div>&copy; 2026 Brightlinx. Free, Privacy-Focused, Open Web Utilities.</div>
+            <p>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        function repeatText() {
+            const text = document.getElementById('inputText').value;
+            let count = parseInt(document.getElementById('repeatCount').value);
+            let separator = document.getElementById('separator').value;
+
+            // Map special values back if needed, but value='\n' works directly in textArea
+
+            if (!text) {
+                alert('Please enter some text to repeat.');
+                return;
+            }
+
+            if (isNaN(count) || count < 1) count = 1;
+            if (count > 10000) {
+                alert('Max limit is 10,000 to prevent browser freeze.');
+                count = 10000;
+                document.getElementById('repeatCount').value = 10000;
+            }
+
+            // Efficient repeating
+            // For very large strings, array join is fast
+            const start = Date.now();
+            let result = "";
+
+            // Optimization: if simple repeat
+            if (count === 1) {
+                result = text;
+            } else {
+                result = new Array(count).fill(text).join(separator);
+            }
+
+            document.getElementById('outputText').value = result;
+        }
+
+        function copyText() {
+            const resultBox = document.getElementById('outputText');
+            const text = resultBox.value;
+
+            if (!text) return;
+
+            navigator.clipboard.writeText(text).then(() => {
+                showToast();
+            }).catch(err => {
+                // Fallback
+                resultBox.select();
+                document.execCommand('copy');
+                showToast();
+            });
+        }
+
+        function shareWhatsapp() {
+            const text = document.getElementById('outputText').value;
+            if (!text) {
+                alert("Generate some text first!");
+                return;
+            }
+            const encodedText = encodeURIComponent(text);
+            window.open(`https://wa.me/?text=${encodedText}`, '_blank');
+        }
+
+        function showToast() {
+            const toast = document.getElementById("toast");
+            toast.className = "show";
+            setTimeout(function () { toast.className = toast.className.replace("show", ""); }, 3000);
+        }
+    </script>
+
+    <!-- Infolinks Script -->
+    <script type="text/javascript">
+        var infolinks_pid = 3442850;
+        var infolinks_wsid = 0;
+    </script>
+    <script type="text/javascript" src="https://resources.infolinks.com/js/infolinks_main.js"></script>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-banner">
+        <p>We use cookies to improve your experience and show personalized ads. By using this site, you agree to our <a
+                href="privacy.html">Privacy Policy</a>.</p>
+        <div>
+            <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Accept</button>
+            <button class="cookie-btn cookie-decline" onclick="declineCookies()">Decline</button>
+        </div>
+    </div>
+    <script>
+        (function () {
+            const banner = document.getElementById('cookie-banner');
+            const consent = localStorage.getItem('cookieConsent');
+            if (!consent) {
+                banner.style.display = 'flex';
+            }
+            window.acceptCookies = function () {
+                localStorage.setItem('cookieConsent', 'accepted');
+                banner.style.display = 'none';
+            };
+            window.declineCookies = function () {
+                banner.style.display = 'none';
+            };
+        })();
+    </script>
+    <!-- Ad Script -->
+    <script async src="https://js.mbidadm.com/static/scripts.js" data-admpid="418415"></script>
+</body>
+
+</html>

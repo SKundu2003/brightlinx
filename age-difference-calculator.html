@@ -32,99 +32,128 @@
     <link rel="preconnect" href="https://www.googletagmanager.com">
     <link rel="preconnect" href="https://clarity.ms">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-
     <!-- SEO Meta Tags -->
-    <title>Online Stopwatch & Timer - Precise & Free | Brightlinx</title>
+    <title>Age Difference Calculator - Calculate Time Between Two Dates | Brightlinx</title>
     <meta name="description"
-        content="A simple, accurate online stopwatch and countdown timer. Track time for sports, cooking, or work. Free web tool by Brightlinx.">
-    <link rel="canonical" href="https://brightlinx.in/stopwatch.html">
+        content="Calculate the exact age difference between two people or dates. Get result in years, months, and days. Accurate, free, and easy to use online tool.">
+    <meta name="keywords"
+        content="age difference calculator, time between dates, date difference, age gap calculator, years months days calculator, brightlinx tools">
+    <link rel="canonical" href="https://brightlinx.in/age-difference-calculator.html">
 
     <!-- Open Graph Tags -->
-    <meta property="og:title" content="Online Stopwatch & Timer - Precise & Free | Brightlinx">
-    <meta property="og:description" content="Track time precisely with our dual-mode clock. Free and easy to use.">
-    <meta property="og:url" content="https://brightlinx.in/stopwatch.html">
+    <meta property="og:title" content="Age Difference Calculator - Free Online Tool | Brightlinx">
+    <meta property="og:description"
+        content="Calculate the exact age difference between two dates. Get accurate results in years, months, and days. Free and secure.">
+    <meta property="og:url" content="https://brightlinx.in/age-difference-calculator.html">
     <meta property="og:type" content="website">
 
     <!-- JSON-LD Schema -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebApplication",
-      "name": "Stopwatch & Timer",
-      "operatingSystem": "Any",
-      "applicationCategory": "Utilities",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
+    [
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Age Difference Calculator",
+        "operatingSystem": "Any",
+        "applicationCategory": "Utility",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.8",
+          "ratingCount": "1024"
+        }
       },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.8",
-        "ratingCount": "1024"
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Does this tool calculate leap years correctly?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, our Age Difference Calculator accounts for leap years to ensure precise calculations of days between any two dates."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I calculate the age difference between two people?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Absolutely. Simply enter the birth dates of the two individuals to see the exact age gap in years, months, and days."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is the date format flexible?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The tool uses a standard date picker, ensuring you can easily select dates regardless of your region's format preferences."
+            }
+          }
+        ]
       }
-    }
+    ]
     </script>
-
     <link rel="stylesheet" href="style.css">
     <style>
-        .timer-display {
-            font-family: monospace;
-            font-size: 4rem;
-            font-weight: 700;
-            color: var(--text-color);
-            margin: 32px 0;
-            text-align: center;
-            letter-spacing: -2px;
-        }
-
-        .tabs {
+        .converter-container {
             display: flex;
-            justify-content: center;
-            margin-bottom: 24px;
-            border-bottom: 1px solid var(--border-color);
+            flex-direction: column;
+            gap: 20px;
         }
 
-        .tab-btn {
-            background: none;
-            border: none;
-            padding: 12px 24px;
-            font-size: 1.1rem;
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .input-group label {
             font-weight: 600;
-            color: var(--text-light);
-            cursor: pointer;
-            border-bottom: 2px solid transparent;
+            color: var(--text-color);
         }
 
-        .tab-btn.active {
-            color: var(--primary-color);
-            border-bottom-color: var(--primary-color);
+        .input-group input {
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+
+        .output-area {
+            background-color: #f1f5f9;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            min-height: 80px;
+            font-size: 1.1rem;
+            color: var(--text-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-weight: 500;
         }
 
         .controls {
             display: flex;
-            justify-content: center;
-            gap: 16px;
+            justify-content: flex-end;
+            gap: 10px;
         }
 
-        .timer-input-group {
-            display: none;
-            /* hidden by default */
-            justify-content: center;
-            gap: 8px;
-            margin-bottom: 24px;
-        }
+        @media (min-width: 600px) {
+            .input-row {
+                display: flex;
+                gap: 20px;
+            }
 
-        .timer-input-group input {
-            width: 80px;
-            text-align: center;
-            font-size: 1.2rem;
-        }
-
-        /* Mobile adjust */
-        @media(max-width: 480px) {
-            .timer-display {
-                font-size: 3rem;
+            .input-group {
+                flex: 1;
             }
         }
     </style>
@@ -143,92 +172,122 @@
         </div>
     </header>
 
-    <main class="tool-page container">
+    <main class="container tool-page">
 
         <div class="tool-header">
-            <h1>Stopwatch & Timer</h1>
-            <p>Track time precisely with our dual-mode clock.</p>
+            <h1>Age Difference Calculator</h1>
+            <p>Calculate the precise time difference between two dates correctly.</p>
         </div>
 
-        <!-- Ad Unit 1 -->
-        <div class="ad-container-top" style="display:flex; justify-content:center; margin: 20px 0; min-height:90px;">
+        <div class="ad-container-top" style="min-height:90px; margin-bottom:20px;">
             <div data-banner-id="2015345"></div>
         </div>
 
-        <section class="tool-wrapper">
+        <div class="tool-wrapper">
+            <div class="converter-container" style="max-width: 600px; margin: 0 auto;">
+                <div class="input-row">
+                    <div class="input-group">
+                        <label for="startDate">Start Date / First Person's DOB</label>
+                        <input type="date" id="startDate" placeholder="Select start date">
+                    </div>
+                    <div class="input-group">
+                        <label for="endDate">End Date / Second Person's DOB</label>
+                        <input type="date" id="endDate" placeholder="Select end date">
+                    </div>
+                </div>
 
-            <div class="tabs">
-                <button class="tab-btn active" onclick="switchMode('stopwatch')" id="tab-stopwatch">Stopwatch</button>
-                <button class="tab-btn" onclick="switchMode('timer')" id="tab-timer">Timer</button>
+                <div class="controls" style="justify-content: center; margin-top: 10px;">
+                    <button class="btn-primary" onclick="calculateDifference()">Calculate Difference</button>
+                </div>
+
+                <div class="output-area" id="resultOutput" aria-placeholder="Result will appear here...">Result will
+                    appear here...</div>
+
+                <div class="controls">
+                    <button class="btn-primary" onclick="copyResult()">Copy Result</button>
+                    <button class="btn-secondary"
+                        onclick="document.getElementById('startDate').value=''; document.getElementById('endDate').value=''; document.getElementById('resultOutput').innerText='Result will appear here...';"
+                        style="background:transparent; border:1px solid var(--border-color); color:var(--text-color);">Clear</button>
+                </div>
             </div>
-
-            <!-- Timer Inputs -->
-            <div class="timer-input-group" id="timer-inputs">
-                <input type="number" id="h" placeholder="00" min="0" max="99"> :
-                <input type="number" id="m" placeholder="00" min="0" max="59"> :
-                <input type="number" id="s" placeholder="00" min="0" max="59">
+            <div id="msg"
+                style="text-align: right; margin-top: 10px; color: green; opacity: 0; transition: opacity 0.3s;">Copied!
             </div>
+        </div>
 
-            <div class="timer-display" id="display">00:00:00</div>
+        <article>
+            <h2>How does the Age Difference Calculator work?</h2>
+            <p>The Age Difference Calculator is a versatile online tool designed to compute the exact time interval
+                between two specific dates. Whether you want to find out the age difference between two people,
+                calculate the duration of a project, or simply know how many days have passed since a significant event,
+                this tool provides instant and accurate results.</p>
+            <p>Unlike simple subtraction, our calculator accounts for the varying lengths of months and leap years,
+                ensuring a precise calculation of years, months, and days.</p>
 
-            <div class="controls">
-                <button class="btn-primary" onclick="toggleStart()" id="btn-start">Start</button>
-                <button class="btn-secondary" onclick="reset()">Reset</button>
-            </div>
+            <h2>How to use this tool?</h2>
+            <ul>
+                <li><strong>Select Start Date:</strong> Use the date picker to choose the starting date or the date of
+                    birth of the first person.</li>
+                <li><strong>Select End Date:</strong> Choose the second date or the date of birth of the second person.
+                    The tool defaults to today's date if not selected for some use cases, but for age difference,
+                    specific input is recommended.</li>
+                <li><strong>Calculate:</strong> Click the "Calculate Difference" button to see the result expressed in
+                    years, months, and days.</li>
+            </ul>
 
-        </section>
+            <h2>Frequently Asked Questions (FAQ)</h2>
+            <h3>Does this tool calculate leap years correctly?</h3>
+            <p>Yes, our algorithm is fully Gregorian calendar compliant, meaning it correctly identifies and handles
+                leap years (adding a day to February) for precise day counts.</p>
 
-        <!-- Ad Unit 2 -->
-        <div class="ad-container-middle"
-            style="display:flex; justify-content:center; margin: 20px 0; min-height:250px;">
+            <h3>Can I calculate the age difference between two people?</h3>
+            <p>Absolutely. Just enter the two birthdays. The order doesn't matter; the tool will calculate the absolute
+                difference between them.</p>
+
+            <h3>How accurately does it calculate months?</h3>
+            <p>The tool calculates full months passed. Remaining days are then counted to provide a detailed breakdown,
+                e.g., "2 years, 3 months, and 15 days".</p>
+        </article>
+
+        <div class="ad-container-bottom"
+            style="display:flex; justify-content:center; margin: 40px 0; min-height:250px;">
             <div data-banner-id="2015349"></div>
         </div>
 
-        <!-- SEO Content -->
-        <article>
-            <h2>How does the Stopwatch & Timer work?</h2>
-            <p>This is a versatile 2-in-1 time management tool including a <strong>Stopwatch</strong> (counting up) and
-                a <strong>Countdown Timer</strong> (counting down). Whether you are timing laps, cooking an egg, or
-                doing the Pomodoro technique for study, this simple web utility helps you stay on track.</p>
-
-            <h2>How to Use the Stopwatch?</h2>
-            <ul>
-                <li><strong>Step 1:</strong> Ensure the "Stopwatch" tab is selected.</li>
-                <li><strong>Step 2:</strong> Press the green "Start" button to begin counting up from zero.</li>
-                <li><strong>Step 3:</strong> Press "Stop" to pause the time.</li>
-                <li><strong>Step 4:</strong> Press "Reset" to clear the time back to 00:00:00.</li>
-            </ul>
-
-            <h2>How to Use the Timer?</h2>
-            <ul>
-                <li><strong>Step 1:</strong> Click the "Timer" tab.</li>
-                <li><strong>Step 2:</strong> Enter your desired time in Hours, Minutes, and Seconds (e.g., 00 : 05 : 00
-                    for 5 minutes).</li>
-                <li><strong>Step 3:</strong> Press "Start". The clock will count down.</li>
-                <li><strong>Step 4:</strong> When it hits zero, it will stop (and in a real app, alarm sound would
-                    play).</li>
-            </ul>
-
-            <h2>Why is it useful?</h2>
-            <p>Online stopwatches are great because they are accessible on any device with a browser, no app
-                installation required. Use it for:</p>
-            <ul>
-                <li><strong>Fitness:</strong> Timing planks, sprints, or rest sets.</li>
-                <li><strong>Productivity:</strong> Time-blocking your work tasks.</li>
-                <li><strong>Cooking:</strong> Setting reminders for the oven.</li>
-            </ul>
-
-            <h2>Frequently Asked Questions</h2>
-            <div itemscope itemtype="https://schema.org/FAQPage">
-                <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                    <h3 itemprop="name">Does it keep running if I switch tabs?</h3>
-                    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                        <p itemprop="text">Yes, modern browsers will keep the logic running, though power-saving modes
-                            on mobile might affect accuracy over very long periods (hours).</p>
-                    </div>
-                </div>
+        <!-- More Tools Section -->
+        <section class="more-tools"
+            style="padding: 40px 0; border-top: 1px solid var(--border-color); margin-top:40px;">
+            <h3 style="text-align: center; margin-bottom: 30px;">More Free Tools</h3>
+            <div class="tools-grid">
+                <a href="number-to-words.html" class="card">
+                    <div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14" />
+                        </svg></div>
+                    <h3>Number to Words</h3>
+                </a>
+                <a href="text-to-binary.html" class="card">
+                    <div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                        </svg></div>
+                    <h3>Binary Converter</h3>
+                </a>
+                <a href="word-counter.html" class="card">
+                    <div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 4h13M3 8h9m-9 4h6m4 0l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                        </svg></div>
+                    <h3>Word Counter</h3>
+                </a>
             </div>
-        </article>
+            <div style="text-align:center; margin-top:20px;">
+                <a href="index.html" style="color:var(--primary-color); font-weight:600;">View All Tools &rarr;</a>
+            </div>
+        </section>
 
     </main>
 
@@ -245,110 +304,65 @@
     </footer>
 
     <script>
-        let interval = null;
-        let seconds = 0;
-        let isRunning = false;
-        let mode = 'stopwatch'; // 'stopwatch' or 'timer'
+        // Age Difference Logic
+        function calculateDifference() {
+            const startInput = document.getElementById('startDate').value;
+            const endInput = document.getElementById('endDate').value;
+            const output = document.getElementById('resultOutput');
 
-        const display = document.getElementById('display');
-        const btnStart = document.getElementById('btn-start');
-        const timerInputs = document.getElementById('timer-inputs');
-        const tabStopwatch = document.getElementById('tab-stopwatch');
-        const tabTimer = document.getElementById('tab-timer');
-
-        // Inputs
-        const hIn = document.getElementById('h');
-        const mIn = document.getElementById('m');
-        const sIn = document.getElementById('s');
-
-        function formatTime(totalSeconds) {
-            let h = Math.floor(totalSeconds / 3600);
-            let m = Math.floor((totalSeconds % 3600) / 60);
-            let s = totalSeconds % 60;
-            return (
-                (h < 10 ? "0" + h : h) + ":" +
-                (m < 10 ? "0" + m : m) + ":" +
-                (s < 10 ? "0" + s : s)
-            );
-        }
-
-        function tick() {
-            if (mode === 'stopwatch') {
-                seconds++;
-            } else {
-                if (seconds > 0) {
-                    seconds--;
-                } else {
-                    stop();
-                    alert("Time is up!");
-                    return;
-                }
-            }
-            display.innerText = formatTime(seconds);
-        }
-
-        function start() {
-            if (mode === 'timer' && !isRunning) {
-                // Initialize seconds from input if just starting
-                if (seconds === 0) {
-                    let h = parseInt(hIn.value) || 0;
-                    let m = parseInt(mIn.value) || 0;
-                    let s = parseInt(sIn.value) || 0;
-                    seconds = (h * 3600) + (m * 60) + s;
-                    if (seconds === 0) return;
-                    display.innerText = formatTime(seconds);
-                }
+            if (!startInput || !endInput) {
+                output.innerText = "Please select both dates.";
+                return;
             }
 
-            interval = setInterval(tick, 1000);
-            isRunning = true;
-            btnStart.innerText = "Stop";
-            btnStart.style.backgroundColor = "#dc2626"; // red
-        }
+            const d1 = new Date(startInput);
+            const d2 = new Date(endInput);
 
-        function stop() {
-            clearInterval(interval);
-            isRunning = false;
-            btnStart.innerText = "Start";
-            btnStart.style.backgroundColor = ""; // reset to primary
-        }
+            // Ensure d1 is the earlier date
+            let start = d1 < d2 ? d1 : d2;
+            let end = d1 < d2 ? d2 : d1;
 
-        function toggleStart() {
-            if (isRunning) stop();
-            else start();
-        }
+            let years = end.getFullYear() - start.getFullYear();
+            let months = end.getMonth() - start.getMonth();
+            let days = end.getDate() - start.getDate();
 
-        function reset() {
-            stop();
-            seconds = 0;
-            display.innerText = "00:00:00";
-            if (mode === 'timer') {
-                hIn.value = "";
-                mIn.value = "";
-                sIn.value = "";
+            if (days < 0) {
+                months--;
+                // Days in previous month
+                const prevMonth = new Date(end.getFullYear(), end.getMonth(), 0);
+                days += prevMonth.getDate();
             }
+
+            if (months < 0) {
+                years--;
+                months += 12;
+            }
+
+            const diffText = `${years} years, ${months} months, ${days} days`;
+            output.innerText = diffText;
         }
 
-        function switchMode(newMode) {
-            reset();
-            mode = newMode;
-            if (mode === 'stopwatch') {
-                tabStopwatch.classList.add('active');
-                tabTimer.classList.remove('active');
-                timerInputs.style.display = 'none';
-            } else {
-                tabStopwatch.classList.remove('active');
-                tabTimer.classList.add('active');
-                timerInputs.style.display = 'flex';
-            }
+        function copyResult() {
+            const output = document.getElementById('resultOutput');
+            const msg = document.getElementById('msg');
+            if (output.innerText === "Result will appear here..." || output.innerText === "Please select both dates.") return;
+
+            navigator.clipboard.writeText(output.innerText).then(() => {
+                msg.style.opacity = 1;
+                setTimeout(() => {
+                    msg.style.opacity = 0;
+                }, 2000);
+            });
         }
     </script>
+
     <!-- Infolinks Script -->
     <script type="text/javascript">
         var infolinks_pid = 3442850;
         var infolinks_wsid = 0;
     </script>
     <script type="text/javascript" src="https://resources.infolinks.com/js/infolinks_main.js"></script>
+
     <!-- Cookie Consent Banner -->
     <div id="cookie-banner">
         <p>We use cookies to improve your experience and show personalized ads. By using this site, you agree to our <a

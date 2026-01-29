@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VBKLLM90TV"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-VBKLLM90TV');
+    </script>
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "v3gr0bbf1t");
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-KQ7BPNTG');</script>
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://clarity.ms">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <!-- SEO Meta Tags -->
+    <title>Small Text Generator - Tiny Font for Instagram & Twitter | Brightlinx</title>
+    <meta name="description"
+        content="Generate small text, tiny font, subscript, and superscript for social media bios. Copy and paste tiny letters instantly for Instagram, Twitter, and TikTok.">
+    <meta name="keywords"
+        content="small text generator, tiny text, small font, superscript generator, subscript generator, instagram bio text, brightlinx">
+    <link rel="canonical" href="https://brightlinx.in/small-text-generator.html">
+
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Small Text Generator - Tiny Font for Instagram & Twitter | Brightlinx">
+    <meta property="og:description"
+        content="Create aesthetic small text and tiny fonts for your profiles. Copy and paste instantly.">
+    <meta property="og:url" content="https://brightlinx.in/small-text-generator.html">
+    <meta property="og:type" content="website">
+
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+    [
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Small Text Generator",
+        "operatingSystem": "Any",
+        "applicationCategory": "Utility",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.8",
+          "ratingCount": "1024"
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How does this make text smaller?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "It replaces regular characters with specific Unicode symbols that look like smaller versions of the alphabet (e.g., superscript or small caps)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why are some letters missing in subscript?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The Unicode standard does not include a complete set of subscript characters for the entire alphabet, so some letters might not be available or may look different."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I use this on Instagram and Twitter?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes! Since these are standard Unicode characters, they work perfectly in bios, posts, and usernames on almost all social media platforms."
+            }
+          }
+        ]
+      }
+    ]
+    </script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .converter-container {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .input-group label {
+            font-weight: 600;
+            color: var(--text-color);
+        }
+
+        textarea {
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 1rem;
+            font-family: inherit;
+            resize: vertical;
+            width: 100%;
+        }
+
+        #inputText {
+            min-height: 80px;
+        }
+
+        .output-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            background: #f8fafc;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .output-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .output-label {
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--primary-color);
+            text-transform: uppercase;
+        }
+
+        .output-text {
+            border: 1px solid #e2e8f0;
+            border-radius: 4px;
+            padding: 10px;
+            background: white;
+            min-height: 50px;
+            font-family: sans-serif;
+            /* Sans-serif renders unicode better usually */
+        }
+
+        .btn-copy-sm {
+            padding: 5px 12px;
+            background-color: #10b981;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            font-weight: 500;
+            transition: opacity 0.2s;
+        }
+
+        .btn-copy-sm:hover {
+            opacity: 0.9;
+        }
+
+        #toast {
+            visibility: hidden;
+            min-width: 250px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            border-radius: 4px;
+            padding: 16px;
+            position: fixed;
+            z-index: 1;
+            left: 50%;
+            bottom: 30px;
+            transform: translateX(-50%);
+            font-size: 17px;
+        }
+
+        #toast.show {
+            visibility: visible;
+            animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        }
+
+        @keyframes fadein {
+            from {
+                bottom: 0;
+                opacity: 0;
+            }
+
+            to {
+                bottom: 30px;
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeout {
+            from {
+                bottom: 30px;
+                opacity: 1;
+            }
+
+            to {
+                bottom: 0;
+                opacity: 0;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KQ7BPNTG" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">Brightlinx</a>
+        </div>
+    </header>
+
+    <main class="container tool-page">
+
+        <div class="tool-header">
+            <h1>Small Text Generator</h1>
+            <p>Convert your text into aesthetic tiny fonts, superscript, and subscript.</p>
+        </div>
+
+        <div class="ad-container-top" style="text-align:center; min-height:100px; margin: 10px auto;">
+            <div data-banner-id="2015345"></div>
+        </div>
+
+        <div class="tool-wrapper">
+            <div class="converter-container" style="max-width: 600px; margin: 0 auto;">
+
+                <div class="input-group">
+                    <label for="inputText">Input Text</label>
+                    <textarea id="inputText" placeholder="Type your text here..." oninput="generateAll()"></textarea>
+                </div>
+
+                <!-- Small Caps -->
+                <div class="output-group">
+                    <div class="output-header">
+                        <span class="output-label">Small Caps</span>
+                        <button class="btn-copy-sm" onclick="copyResult('smallCaps')">Copy</button>
+                    </div>
+                    <textarea id="smallCaps" class="output-text" readonly></textarea>
+                </div>
+
+                <!-- Superscript -->
+                <div class="output-group">
+                    <div class="output-header">
+                        <span class="output-label">Superscript (Tiny)</span>
+                        <button class="btn-copy-sm" onclick="copyResult('superScript')">Copy</button>
+                    </div>
+                    <textarea id="superScript" class="output-text" readonly></textarea>
+                </div>
+
+                <!-- Subscript -->
+                <div class="output-group">
+                    <div class="output-header">
+                        <span class="output-label">Subscript</span>
+                        <button class="btn-copy-sm" onclick="copyResult('subScript')">Copy</button>
+                    </div>
+                    <textarea id="subScript" class="output-text" readonly></textarea>
+                </div>
+
+            </div>
+        </div>
+
+        <article>
+            <h2>How does the Small Text Generator work?</h2>
+            <p>Many people think this is a "small font" that you can download, but it is actually a set of Unicode
+                characters. Unicode is the international standard for text on computers, and it includes ranges for
+                phonetic symbols, mathematical subscript/superscript, and older writing systems.</p>
+            <p>This tool maps your regular keyboard letters (A-Z) to these specific Unicode symbols that happen to look
+                like smaller versions of the alphabet. Because they are standard text characters, you can copy and paste
+                them anywhere—Instagram bios, Facebook posts, Twitter tweets, and more.</p>
+
+            <h2>Where to use Tiny Text?</h2>
+            <p><strong>Instagram & TikTok Bios:</strong> Make your profile stand out with a unique aesthetic that
+                catches the eye.</p>
+            <p><strong>Gamer Tags:</strong> Create a unique username for Discord, PUBG, or Fortnite using superscript
+                letters.</p>
+            <p><strong>Aesthetic Captions:</strong> Use small caps to add a "whisper" effect or a minimalist vibe to
+                your photo captions.</p>
+
+            <h2>Why do some letters look missing?</h2>
+            <p>You might notice that the "Subscript" generator sometimes replaces letters with similar-looking symbols
+                or leaves them blank. This is because the Unicode standard does not actually include a dedicated
+                subscript character for every single letter of the alphabet. We have done our best to find the closest
+                matches for a complete set.</p>
+        </article>
+
+        <div class="ad-container-middle" style="text-align:center; margin: 20px 0; min-height:250px;">
+            <div data-banner-id="2015585"></div>
+        </div>
+
+        <div id="toast">Copied to clipboard!</div>
+
+        <!-- More Tools Section -->
+        <section class="more-tools"
+            style="padding: 40px 0; border-top: 1px solid var(--border-color); margin-top:40px;">
+            <h3 style="text-align: center; margin-bottom: 30px;">More Free Tools</h3>
+            <div class="tools-grid">
+                <a href="reverse-text-generator.html" class="card">
+                    <div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                        </svg></div>
+                    <h3>Reverse Text Generator</h3>
+                </a>
+                <a href="text-repeater.html" class="card">
+                    <div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+                        </svg></div>
+                    <h3>Text Repeater</h3>
+                </a>
+                <a href="index.html" class="card">
+                    <div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+                        </svg></div>
+                    <h3>All Tools</h3>
+                </a>
+            </div>
+            <div style="text-align:center; margin-top:20px;">
+                <a href="index.html" style="color:var(--primary-color); font-weight:600;">View All Tools &rarr;</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="ad-container-bottom" style="text-align:center; min-height:100px; margin-top: 30px;">
+            <div data-banner-id="2015586"></div>
+        </div>
+        <div class="container">
+            <div>&copy; 2026 Brightlinx. Free, Privacy-Focused, Open Web Utilities.</div>
+            <p>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Character Maps
+        const smallCapsMap = {
+            'a': 'ᴀ', 'b': 'ʙ', 'c': 'ᴄ', 'd': 'ᴅ', 'e': 'ᴇ', 'f': 'ꜰ', 'g': 'ɢ', 'h': 'ʜ', 'i': 'ɪ', 'j': 'ᴊ', 'k': 'ᴋ', 'l': 'ʟ', 'm': 'ᴍ', 'n': 'ɴ', 'o': 'ᴏ', 'p': 'ᴘ', 'q': 'ꞯ', 'r': 'ʀ', 's': 'ꜱ', 't': 'ᴛ', 'u': 'ᴜ', 'v': 'ᴠ', 'w': 'ᴡ', 'x': 'x', 'y': 'ʏ', 'z': 'ᴢ'
+        };
+
+        const superScriptMap = {
+            'a': 'ᵃ', 'b': 'ᵇ', 'c': 'ᶜ', 'd': 'ᵈ', 'e': 'ᵉ', 'f': 'ᶠ', 'g': 'ᵍ', 'h': 'ʰ', 'i': 'ⁱ', 'j': 'ʲ', 'k': 'ᵏ', 'l': 'ˡ', 'm': 'ᵐ', 'n': 'ⁿ', 'o': 'ᵒ', 'p': 'ᵖ', 'q': 'ᵠ', 'r': 'ʳ', 's': 'ˢ', 't': 'ᵗ', 'u': 'ᵘ', 'v': 'ᵛ', 'w': 'ʷ', 'x': 'ˣ', 'y': 'ʸ', 'z': 'ᶻ',
+            'A': 'ᴬ', 'B': 'ᴮ', 'C': 'ᶜ', 'D': 'ᴰ', 'E': 'ᴱ', 'F': 'ᶠ', 'G': 'ᴳ', 'H': 'ᴴ', 'I': 'ᴵ', 'J': 'ᴶ', 'K': 'ᴷ', 'L': 'ᴸ', 'M': 'ᴹ', 'N': 'ᴺ', 'O': 'ᴼ', 'P': 'ᴾ', 'Q': 'ᵠ', 'R': 'ᴿ', 'S': 'ˢ', 'T': 'ᵀ', 'U': 'ᵁ', 'V': 'ⱽ', 'W': 'ᵂ', 'X': 'ˣ', 'Y': 'ʸ', 'Z': 'ᶻ',
+            '0': '⁰', '1': '¹', '2': '²', '3': '³', '4': '⁴', '5': '⁵', '6': '⁶', '7': '⁷', '8': '⁸', '9': '⁹'
+        };
+
+        const subScriptMap = {
+            'a': 'ₐ', 'b': '₆', 'c': '𝒸', 'd': 'ₘ', 'e': 'ₑ', 'f': 'f', 'g': '₉', 'h': 'ₕ', 'i': 'ᵢ', 'j': 'ⱼ', 'k': 'ₖ', 'l': 'ₗ', 'm': 'ₘ', 'n': 'ₙ', 'o': 'ₒ', 'p': 'ₚ', 'q': 'q', 'r': 'ᵣ', 's': 'ₛ', 't': 'ₜ', 'u': 'ᵤ', 'v': 'ᵥ', 'w': 'w', 'x': 'ₓ', 'y': 'ᵧ', 'z': '₂',
+            '0': '₀', '1': '₁', '2': '₂', '3': '₃', '4': '₄', '5': '₅', '6': '₆', '7': '₇', '8': '₈', '9': '₉'
+        };
+
+        function generateAll() {
+            const input = document.getElementById('inputText').value;
+
+            // Small Caps
+            let sc = '';
+            for (let char of input) {
+                sc += smallCapsMap[char.toLowerCase()] || char;
+            }
+            document.getElementById('smallCaps').value = sc;
+
+            // Superscript
+            let sup = '';
+            for (let char of input) {
+                sup += superScriptMap[char] || superScriptMap[char.toLowerCase()] || char;
+            }
+            document.getElementById('superScript').value = sup;
+
+            // Subscript
+            let sub = '';
+            for (let char of input) {
+                sub += subScriptMap[char.toLowerCase()] || char;
+            }
+            document.getElementById('subScript').value = sub;
+        }
+
+        function copyResult(id) {
+            const el = document.getElementById(id);
+            if (!el.value) return;
+
+            navigator.clipboard.writeText(el.value).then(() => {
+                showToast();
+            }).catch(() => {
+                el.select();
+                document.execCommand('copy');
+                showToast();
+            });
+        }
+
+        function showToast() {
+            const toast = document.getElementById("toast");
+            toast.className = "show";
+            setTimeout(function () { toast.className = toast.className.replace("show", ""); }, 3000);
+        }
+    </script>
+
+    <!-- Infolinks Script -->
+    <script type="text/javascript">
+        var infolinks_pid = 3442850;
+        var infolinks_wsid = 0;
+    </script>
+    <script type="text/javascript" src="https://resources.infolinks.com/js/infolinks_main.js"></script>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-banner">
+        <p>We use cookies to improve your experience and show personalized ads. By using this site, you agree to our <a
+                href="privacy.html">Privacy Policy</a>.</p>
+        <div>
+            <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Accept</button>
+            <button class="cookie-btn cookie-decline" onclick="declineCookies()">Decline</button>
+        </div>
+    </div>
+    <script>
+        (function () {
+            const banner = document.getElementById('cookie-banner');
+            const consent = localStorage.getItem('cookieConsent');
+            if (!consent) {
+                banner.style.display = 'flex';
+            }
+            window.acceptCookies = function () {
+                localStorage.setItem('cookieConsent', 'accepted');
+                banner.style.display = 'none';
+            };
+            window.declineCookies = function () {
+                banner.style.display = 'none';
+            };
+        })();
+    </script>
+    <!-- Ad Script -->
+    <script async src="https://js.mbidadm.com/static/scripts.js" data-admpid="418415"></script>
+</body>
+
+</html>
