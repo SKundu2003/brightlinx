@@ -154,24 +154,6 @@ header .container {
 
 /* Ad Containers & Layout */
 .ad-wrapper {
-    margin: 32px auto;
-    text-align: center;
-    width: 100%;
-    clear: both;
-}
-
-.ad-label {
-    display: block;
-    font-size: 0.7rem;
-    color: var(--text-light);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 8px;
-    font-weight: 600;
-}
-
-/* Ad Containers & Layout */
-.ad-wrapper {
     margin: 24px auto;
     text-align: center;
     width: 100%;
